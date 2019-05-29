@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="qcsStudyAnalyticsSearcuClassController">
+            <connections>
+                <outlet property="chooseGradeButton" destination="ZVD-5Z-MsY" id="3LC-o5-n7o"/>
+                <outlet property="mainCollectionView" destination="go8-yL-Nt5" id="OR0-lZ-zrt"/>
+                <outlet property="searchButton" destination="8jn-Ri-Zn4" id="bKt-tg-Pz1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUt-KT-9p8">
+                    <rect key="frame" x="8" y="8" width="359" height="651"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jn-Ri-Zn4">
+                            <rect key="frame" x="2" y="604" width="355" height="39"/>
+                            <color key="backgroundColor" red="0.0" green="0.80667787790000001" blue="0.54432600740000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="39" id="UiZ-gH-bj5"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                            <state key="normal" title="搜     索">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="3"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="searchAction:" destination="-1" eventType="touchUpInside" id="rLo-jY-GCF"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择年级:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kr-Cc-fKa">
+                            <rect key="frame" x="18" y="39" width="93" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="93" id="Sxi-dR-UBH"/>
+                                <constraint firstAttribute="height" constant="21" id="up6-qi-Jql"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVD-5Z-MsY">
+                            <rect key="frame" x="119" y="35" width="232" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="29" id="gJp-Cw-1Fi"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="请选择年级">
+                                <color key="titleColor" red="0.27058823529999998" green="0.43529411759999997" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="chooseGradeAction:" destination="-1" eventType="touchUpInside" id="GWm-cO-eIj"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择班级:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eye-eg-oQw">
+                            <rect key="frame" x="18" y="86" width="93" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="Cyv-za-mfp"/>
+                                <constraint firstAttribute="width" constant="93" id="T8b-64-i1J"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="go8-yL-Nt5">
+                            <rect key="frame" x="18" y="115" width="333" height="473"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UbD-A2-ag2">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="ZVD-5Z-MsY" firstAttribute="top" secondItem="fUt-KT-9p8" secondAttribute="top" constant="35" id="2EF-gx-pAL"/>
+                        <constraint firstItem="eye-eg-oQw" firstAttribute="top" secondItem="3kr-Cc-fKa" secondAttribute="bottom" constant="26" id="3Aj-eJ-Iaf"/>
+                        <constraint firstAttribute="trailing" secondItem="go8-yL-Nt5" secondAttribute="trailing" constant="8" id="4e4-oe-1DM"/>
+                        <constraint firstItem="3kr-Cc-fKa" firstAttribute="leading" secondItem="fUt-KT-9p8" secondAttribute="leading" constant="18" id="51I-yV-FMi"/>
+                        <constraint firstItem="go8-yL-Nt5" firstAttribute="top" secondItem="eye-eg-oQw" secondAttribute="bottom" constant="8" id="6oZ-Hv-XGW"/>
+                        <constraint firstItem="8jn-Ri-Zn4" firstAttribute="bottom" secondItem="fUt-KT-9p8" secondAttribute="bottomMargin" id="FOB-41-chM"/>
+                        <constraint firstAttribute="trailing" secondItem="8jn-Ri-Zn4" secondAttribute="trailing" constant="2" id="GtJ-E3-htO"/>
+                        <constraint firstItem="eye-eg-oQw" firstAttribute="leading" secondItem="fUt-KT-9p8" secondAttribute="leading" constant="18" id="Qrl-XX-PF1"/>
+                        <constraint firstItem="8jn-Ri-Zn4" firstAttribute="centerX" secondItem="fUt-KT-9p8" secondAttribute="centerX" id="aeq-xg-Zkz"/>
+                        <constraint firstItem="8jn-Ri-Zn4" firstAttribute="leading" secondItem="fUt-KT-9p8" secondAttribute="leading" constant="2" id="eBX-mQ-bTf"/>
+                        <constraint firstItem="3kr-Cc-fKa" firstAttribute="top" secondItem="fUt-KT-9p8" secondAttribute="top" constant="39" id="mVV-VP-Gol"/>
+                        <constraint firstItem="ZVD-5Z-MsY" firstAttribute="leading" secondItem="3kr-Cc-fKa" secondAttribute="trailing" constant="8" id="ont-P7-D62"/>
+                        <constraint firstItem="go8-yL-Nt5" firstAttribute="leading" secondItem="fUt-KT-9p8" secondAttribute="leading" constant="18" id="prd-qi-uBt"/>
+                        <constraint firstAttribute="trailing" secondItem="ZVD-5Z-MsY" secondAttribute="trailing" constant="8" id="vcn-De-Zl1"/>
+                        <constraint firstItem="8jn-Ri-Zn4" firstAttribute="top" secondItem="go8-yL-Nt5" secondAttribute="bottom" constant="16" id="y9E-y1-cpx"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="fUt-KT-9p8" secondAttribute="trailing" constant="8" id="aV5-L6-yX2"/>
+                <constraint firstAttribute="bottom" secondItem="fUt-KT-9p8" secondAttribute="bottom" constant="8" id="bsQ-AQ-6eC"/>
+                <constraint firstItem="fUt-KT-9p8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="epz-ME-oNW"/>
+                <constraint firstItem="fUt-KT-9p8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="ybh-0d-8kz"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="113.5"/>
+        </view>
+    </objects>
+</document>

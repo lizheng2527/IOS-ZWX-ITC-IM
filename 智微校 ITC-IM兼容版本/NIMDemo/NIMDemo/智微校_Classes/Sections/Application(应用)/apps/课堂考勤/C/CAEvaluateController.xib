@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CAEvaluateController">
+            <connections>
+                <outlet property="AddScoreButton" destination="GJC-pp-zzv" id="iEh-GJ-xV2"/>
+                <outlet property="AddScoreLineView" destination="9g0-9E-d8Q" id="88P-fQ-aAo"/>
+                <outlet property="DisScoreButton" destination="cRN-1t-fqX" id="xoz-hE-KLe"/>
+                <outlet property="DisScoreLineView" destination="Aqx-2E-UFf" id="FdK-h8-ypW"/>
+                <outlet property="mainTableView" destination="c5m-Zz-dlO" id="w9I-4Y-BuD"/>
+                <outlet property="submitButton" destination="6KC-Ly-Jye" id="qoE-0X-TvQ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="c5m-Zz-dlO">
+                    <rect key="frame" x="0.0" y="60" width="375" height="562"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                </tableView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6KC-Ly-Jye">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <color key="backgroundColor" red="0.095757223665714264" green="0.71359497308731079" blue="0.59638410806655884" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Tm6-M7-eqk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <state key="normal" title="提交">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="submitButtonClicked:" destination="-1" eventType="touchUpInside" id="RIo-OR-FE6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJC-pp-zzv">
+                    <rect key="frame" x="0.0" y="8" width="186" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                    <state key="normal" title="加分">
+                        <color key="titleColor" red="0.095757223670000002" green="0.71359497309999997" blue="0.59638410809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="addScoreAction:" destination="-1" eventType="touchUpInside" id="jCs-p1-PDi"/>
+                    </connections>
+                </button>
+                <view alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9g0-9E-d8Q">
+                    <rect key="frame" x="48" y="56" width="90" height="2"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.22173511979999999" green="0.71447253229999996" blue="0.61452662940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRN-1t-fqX">
+                    <rect key="frame" x="187" y="8" width="188" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                    <state key="normal" title="减分">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="disScoreAction:" destination="-1" eventType="touchUpInside" id="Wb5-1c-3th"/>
+                    </connections>
+                </button>
+                <view hidden="YES" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aqx-2E-UFf">
+                    <rect key="frame" x="236" y="56" width="90" height="2"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.22173511979999999" green="0.71447253229999996" blue="0.61452662940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sp6-Qo-zsO">
+                    <rect key="frame" x="187" y="8" width="1" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="6KC-Ly-Jye" secondAttribute="bottom" id="ALr-Sr-FN4"/>
+                <constraint firstItem="6KC-Ly-Jye" firstAttribute="top" secondItem="c5m-Zz-dlO" secondAttribute="bottom" constant="1" id="BFM-FP-VNO"/>
+                <constraint firstItem="c5m-Zz-dlO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="G1n-Lo-p9Z"/>
+                <constraint firstAttribute="trailing" secondItem="c5m-Zz-dlO" secondAttribute="trailing" id="dm1-dc-CcT"/>
+                <constraint firstItem="c5m-Zz-dlO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="e12-K0-RuR"/>
+                <constraint firstAttribute="trailing" secondItem="6KC-Ly-Jye" secondAttribute="trailing" id="vxU-fJ-KT2"/>
+                <constraint firstItem="6KC-Ly-Jye" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vzB-hm-jRC"/>
+            </constraints>
+            <point key="canvasLocation" x="32.799999999999997" y="-8.5457271364317844"/>
+        </view>
+    </objects>
+</document>

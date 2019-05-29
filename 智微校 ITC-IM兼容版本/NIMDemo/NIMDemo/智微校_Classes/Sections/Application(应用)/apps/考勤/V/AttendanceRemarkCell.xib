@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="AttendanceRemarkCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金额:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yr4-Id-e8j">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="36" id="YJQ-Ew-jQs"/>
+                            <constraint firstAttribute="height" constant="21" id="rtV-Ug-GK3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用途:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qL9-CR-TwT">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="K9l-id-ZgO"/>
+                            <constraint firstAttribute="width" constant="36" id="kf7-fD-667"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7W-Tw-iaX">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="hW3-fW-aBg"/>
+                            <constraint firstAttribute="width" constant="23" id="y8p-SY-Kpr"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="btn_ci_del"/>
+                        <connections>
+                            <action selector="delAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Nue-2U-B0j"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBC-cR-zrS">
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="lxa-cn-mBL"/>
+                            <constraint firstAttribute="width" constant="85" id="tED-YE-pOy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <state key="normal" title="请选择">
+                            <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="typeChooseAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qMi-iL-qhx"/>
+                        </connections>
+                    </button>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IMa-jZ-u0a">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="ygy-90-WWx"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="K7W-Tw-iaX" firstAttribute="leading" secondItem="DBC-cR-zrS" secondAttribute="trailing" constant="12" id="4t2-lc-xss"/>
+                    <constraint firstItem="qL9-CR-TwT" firstAttribute="leading" secondItem="IMa-jZ-u0a" secondAttribute="trailing" constant="15" id="Qeh-zw-6LH"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="K7W-Tw-iaX" secondAttribute="trailing" constant="1" id="TbP-qI-V4i"/>
+                    <constraint firstItem="qL9-CR-TwT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="Yhr-nO-KnV"/>
+                    <constraint firstItem="yr4-Id-e8j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="bdQ-j1-hEl"/>
+                    <constraint firstItem="K7W-Tw-iaX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="c47-yh-i1b"/>
+                    <constraint firstItem="IMa-jZ-u0a" firstAttribute="leading" secondItem="yr4-Id-e8j" secondAttribute="trailing" constant="8" id="du4-Tu-Y0J"/>
+                    <constraint firstItem="yr4-Id-e8j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="eM4-CK-b3u"/>
+                    <constraint firstItem="qL9-CR-TwT" firstAttribute="leading" secondItem="IMa-jZ-u0a" secondAttribute="trailing" constant="15" id="fDR-oF-s2C"/>
+                    <constraint firstItem="DBC-cR-zrS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ixB-31-VfS"/>
+                    <constraint firstItem="IMa-jZ-u0a" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="jL0-N9-8WF"/>
+                    <constraint firstItem="DBC-cR-zrS" firstAttribute="leading" secondItem="qL9-CR-TwT" secondAttribute="trailing" constant="6" id="xda-OC-neG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="delegateBtn" destination="K7W-Tw-iaX" id="gKT-5H-add"/>
+                <outlet property="moneyTextField" destination="IMa-jZ-u0a" id="UCF-yZ-Suh"/>
+                <outlet property="useageBtn" destination="DBC-cR-zrS" id="tYo-VI-Ate"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="btn_ci_del" width="64" height="64"/>
+    </resources>
+</document>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainSettingCell" id="KGk-i7-Jjw" customClass="TYHSettingsCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="39"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息设置" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQS-W8-Sy1">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="31" id="upN-3i-DZG"/>
+                            <constraint firstAttribute="width" constant="65" id="zED-wD-wBr"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iOS图片" translatesAutoresizingMaskIntoConstraints="NO" id="EFJ-z2-ieR">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="RGw-lV-6UF"/>
+                            <constraint firstAttribute="height" constant="25" id="ptZ-lr-TjP"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W9V-2D-xM9">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="27" id="0gc-2p-men"/>
+                            <constraint firstAttribute="width" constant="28" id="eVe-HX-hGo"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKc-gk-4E7">
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="QCO-zF-3k4"/>
+                            <constraint firstAttribute="height" constant="15" id="ixJ-NG-lzc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZKc-gk-4E7" firstAttribute="leading" secondItem="CQS-W8-Sy1" secondAttribute="trailing" constant="8" id="DXS-lv-ryI"/>
+                    <constraint firstItem="ZKc-gk-4E7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="DdM-KA-9hL"/>
+                    <constraint firstAttribute="bottom" secondItem="CQS-W8-Sy1" secondAttribute="bottom" constant="4" id="EWo-NY-9Iv"/>
+                    <constraint firstItem="EFJ-z2-ieR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JEk-Ej-ZD0"/>
+                    <constraint firstAttribute="trailing" secondItem="W9V-2D-xM9" secondAttribute="trailing" constant="8" id="apl-Vl-N2g"/>
+                    <constraint firstItem="W9V-2D-xM9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="k5C-I2-t7k"/>
+                    <constraint firstItem="EFJ-z2-ieR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="mXM-9F-2wi"/>
+                    <constraint firstItem="CQS-W8-Sy1" firstAttribute="leading" secondItem="EFJ-z2-ieR" secondAttribute="trailing" constant="11" id="tar-5o-Tbu"/>
+                    <constraint firstItem="CQS-W8-Sy1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="zYI-jo-Qnz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="itemIcon" destination="EFJ-z2-ieR" id="7tp-Dz-5C9"/>
+                <outlet property="nnewContent_Image" destination="W9V-2D-xM9" id="UQs-a7-hsN"/>
+                <outlet property="nnewLikeOrComment_Label" destination="ZKc-gk-4E7" id="0c0-JI-92t"/>
+                <outlet property="settingLabel" destination="CQS-W8-Sy1" id="d4r-j6-JaQ"/>
+            </connections>
+            <point key="canvasLocation" x="240" y="256"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="iOS图片" width="67" height="67"/>
+    </resources>
+</document>

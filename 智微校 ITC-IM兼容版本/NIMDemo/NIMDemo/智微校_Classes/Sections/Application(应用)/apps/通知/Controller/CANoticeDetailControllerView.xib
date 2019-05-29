@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CANoticeDetailControllerView">
+            <connections>
+                <outlet property="detailLabel" destination="865-SI-8Pc" id="upg-xK-2lf"/>
+                <outlet property="titleLabel" destination="fbr-dI-vpH" id="Uj0-KF-7Vr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbr-dI-vpH">
+                    <rect key="frame" x="40" y="93" width="295" height="21.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="295" id="L7v-nc-n8P"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="21" id="lkl-7J-o0T"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无内容" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="865-SI-8Pc">
+                    <rect key="frame" x="22" y="149.5" width="331" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="331" id="oJG-uj-Xsk"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="24" id="vAJ-qg-n5G"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.99358770715531397" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="865-SI-8Pc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="22" id="9NO-r6-edK"/>
+                <constraint firstAttribute="trailing" secondItem="865-SI-8Pc" secondAttribute="trailing" constant="22" id="OcY-BU-hee"/>
+                <constraint firstItem="865-SI-8Pc" firstAttribute="top" secondItem="fbr-dI-vpH" secondAttribute="bottom" constant="35" id="PMG-0D-BOo"/>
+                <constraint firstAttribute="trailing" secondItem="fbr-dI-vpH" secondAttribute="trailing" constant="40" id="W46-Np-CCn"/>
+                <constraint firstItem="fbr-dI-vpH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="h2E-CW-DuK"/>
+                <constraint firstItem="fbr-dI-vpH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="93" id="swo-ev-tVK"/>
+            </constraints>
+            <point key="canvasLocation" x="62.5" y="104.5"/>
+        </view>
+    </objects>
+</document>

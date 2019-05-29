@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AttendaceBuQianController">
+            <connections>
+                <outlet property="chooseTimeBtn" destination="Fqz-4G-jce" id="a4C-ww-VBi"/>
+                <outlet property="textView" destination="oMt-Hu-RTk" id="AZO-Uv-eOA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*实际上班时间:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk3-Ip-Txh">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="97" id="Rds-QT-1bv"/>
+                        <constraint firstAttribute="height" constant="21" id="mSX-Jx-10r"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*说明/原因:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNK-Bm-00R">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="bXl-e5-r7h"/>
+                        <constraint firstAttribute="width" constant="97" id="zcw-kU-dfd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqz-4G-jce">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="5dP-0i-sEK"/>
+                        <constraint firstAttribute="width" constant="79" id="WIq-K2-89z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <state key="normal" title="选择时间">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="chooseTimeAction:" destination="-1" eventType="touchUpInside" id="wym-O2-GUj"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oMt-Hu-RTk">
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="7xj-c2-HGR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fc-6s-otd">
+                    <color key="backgroundColor" red="0.074509803920000006" green="0.53725490200000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="icy-y8-RpB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <state key="normal" title="开始补签">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buqianAction:" destination="-1" eventType="touchUpInside" id="Jsg-kI-nrc"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oMt-Hu-RTk" firstAttribute="leading" secondItem="dNK-Bm-00R" secondAttribute="trailing" constant="8" id="1qd-gC-fKI"/>
+                <constraint firstItem="2fc-6s-otd" firstAttribute="top" secondItem="oMt-Hu-RTk" secondAttribute="bottom" constant="43" id="2BZ-uZ-Rjc"/>
+                <constraint firstItem="oMt-Hu-RTk" firstAttribute="top" secondItem="Fqz-4G-jce" secondAttribute="bottom" constant="9" id="2se-1G-t8x"/>
+                <constraint firstItem="Fk3-Ip-Txh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="6Ap-Po-ax2"/>
+                <constraint firstItem="dNK-Bm-00R" firstAttribute="top" secondItem="Fk3-Ip-Txh" secondAttribute="bottom" constant="8" id="6dD-Cf-PW5"/>
+                <constraint firstAttribute="trailing" secondItem="2fc-6s-otd" secondAttribute="trailing" constant="26" id="CB6-HR-WS7"/>
+                <constraint firstItem="dNK-Bm-00R" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="LeC-Ai-bSy"/>
+                <constraint firstItem="Fk3-Ip-Txh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="N02-Le-qFP"/>
+                <constraint firstItem="2fc-6s-otd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="26" id="TNd-xP-tF9"/>
+                <constraint firstItem="Fqz-4G-jce" firstAttribute="leading" secondItem="Fk3-Ip-Txh" secondAttribute="trailing" constant="8" id="hTc-bf-XaL"/>
+                <constraint firstAttribute="trailing" secondItem="oMt-Hu-RTk" secondAttribute="trailing" constant="14" id="pVi-7L-1eO"/>
+                <constraint firstItem="Fqz-4G-jce" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="ss4-SZ-A6c"/>
+            </constraints>
+            <point key="canvasLocation" x="-57" y="114"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="qcsStudyAnalyticsSearcuStudentController">
+            <connections>
+                <outlet property="chooseClassButton" destination="cxW-m6-uXe" id="u5h-DA-U2A"/>
+                <outlet property="chooseGradeButton" destination="xpV-IO-Gi3" id="4yF-PC-6X3"/>
+                <outlet property="mainCollectionView" destination="BRX-RZ-8db" id="yS3-T8-RkA"/>
+                <outlet property="searchButton" destination="fKv-h2-O05" id="Ktf-0j-9Ex"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7i-TQ-nmA">
+                    <rect key="frame" x="8" y="8" width="359" height="651"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKv-h2-O05">
+                            <rect key="frame" x="2" y="604" width="355" height="39"/>
+                            <color key="backgroundColor" red="0.0" green="0.80667787790000001" blue="0.54432600740000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="39" id="Z7x-wM-pfU"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                            <state key="normal" title="搜     索">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="3"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="searchAction:" destination="-1" eventType="touchUpInside" id="TT2-yn-ROE"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择年级:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJ1-57-iT7">
+                            <rect key="frame" x="18" y="39" width="93" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="D7f-NR-00q"/>
+                                <constraint firstAttribute="width" constant="93" id="dwx-2u-KR7"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpV-IO-Gi3">
+                            <rect key="frame" x="119" y="35" width="232" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="29" id="FeB-gc-m3W"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="请选择年级">
+                                <color key="titleColor" red="0.27058823529999998" green="0.43529411759999997" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="chooseGradeAction:" destination="-1" eventType="touchUpInside" id="T5q-Tk-W23"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择班级:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZG-L5-XUD">
+                            <rect key="frame" x="18" y="81" width="93" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="93" id="GpH-QL-io1"/>
+                                <constraint firstAttribute="height" constant="21" id="sGN-tC-xh4"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxW-m6-uXe">
+                            <rect key="frame" x="119" y="77" width="232" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="29" id="UE0-SU-p15"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="请选择班级">
+                                <color key="titleColor" red="0.27058823529999998" green="0.43529411759999997" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="chooseClassAction:" destination="-1" eventType="touchUpInside" id="wX5-eP-Gr7"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择学生:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3y-Fp-4Id">
+                            <rect key="frame" x="18" y="121" width="93" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="93" id="Ekf-x9-fW3"/>
+                                <constraint firstAttribute="height" constant="21" id="laA-ec-MRT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BRX-RZ-8db">
+                            <rect key="frame" x="18" y="150" width="333" height="438"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dNt-FK-pyF">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="kZG-L5-XUD" firstAttribute="leading" secondItem="c7i-TQ-nmA" secondAttribute="leading" constant="18" id="3Qb-4b-8re"/>
+                        <constraint firstItem="V3y-Fp-4Id" firstAttribute="top" secondItem="kZG-L5-XUD" secondAttribute="bottom" constant="19" id="5ev-mq-AVK"/>
+                        <constraint firstAttribute="bottom" secondItem="fKv-h2-O05" secondAttribute="bottom" constant="8" id="77F-CZ-VaR"/>
+                        <constraint firstItem="xpV-IO-Gi3" firstAttribute="leading" secondItem="RJ1-57-iT7" secondAttribute="trailing" constant="8" id="AyZ-hj-PVq"/>
+                        <constraint firstItem="RJ1-57-iT7" firstAttribute="top" secondItem="c7i-TQ-nmA" secondAttribute="top" constant="39" id="GZl-tr-bw1"/>
+                        <constraint firstAttribute="trailing" secondItem="fKv-h2-O05" secondAttribute="trailing" constant="2" id="IAS-fn-tW6"/>
+                        <constraint firstAttribute="trailing" secondItem="cxW-m6-uXe" secondAttribute="trailing" constant="8" id="Ord-bA-yoh"/>
+                        <constraint firstItem="fKv-h2-O05" firstAttribute="top" secondItem="BRX-RZ-8db" secondAttribute="bottom" constant="16" id="RBF-yc-REQ"/>
+                        <constraint firstItem="RJ1-57-iT7" firstAttribute="leading" secondItem="c7i-TQ-nmA" secondAttribute="leading" constant="18" id="aMh-kv-RnP"/>
+                        <constraint firstItem="xpV-IO-Gi3" firstAttribute="top" secondItem="c7i-TQ-nmA" secondAttribute="top" constant="35" id="dpO-L1-Ej8"/>
+                        <constraint firstItem="cxW-m6-uXe" firstAttribute="top" secondItem="xpV-IO-Gi3" secondAttribute="bottom" constant="13" id="f0i-kO-xqL"/>
+                        <constraint firstItem="cxW-m6-uXe" firstAttribute="leading" secondItem="kZG-L5-XUD" secondAttribute="trailing" constant="8" id="hIC-8i-xx8"/>
+                        <constraint firstItem="V3y-Fp-4Id" firstAttribute="leading" secondItem="c7i-TQ-nmA" secondAttribute="leading" constant="18" id="jgW-kr-OJz"/>
+                        <constraint firstAttribute="trailing" secondItem="xpV-IO-Gi3" secondAttribute="trailing" constant="8" id="k3Z-vQ-FAG"/>
+                        <constraint firstItem="fKv-h2-O05" firstAttribute="leading" secondItem="c7i-TQ-nmA" secondAttribute="leading" constant="2" id="lvF-fR-Ylf"/>
+                        <constraint firstAttribute="trailing" secondItem="BRX-RZ-8db" secondAttribute="trailing" constant="8" id="oHT-5p-hR2"/>
+                        <constraint firstItem="BRX-RZ-8db" firstAttribute="leading" secondItem="c7i-TQ-nmA" secondAttribute="leading" constant="18" id="pj6-QQ-ZGC"/>
+                        <constraint firstItem="BRX-RZ-8db" firstAttribute="top" secondItem="V3y-Fp-4Id" secondAttribute="bottom" constant="8" id="sot-1S-yYt"/>
+                        <constraint firstItem="kZG-L5-XUD" firstAttribute="top" secondItem="RJ1-57-iT7" secondAttribute="bottom" constant="21" id="z5G-X0-Ffn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="c7i-TQ-nmA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Cyt-Ta-yhX"/>
+                <constraint firstItem="c7i-TQ-nmA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="J1p-N4-y11"/>
+                <constraint firstAttribute="trailing" secondItem="c7i-TQ-nmA" secondAttribute="trailing" constant="8" id="l1Y-I2-pBE"/>
+                <constraint firstAttribute="bottom" secondItem="c7i-TQ-nmA" secondAttribute="bottom" constant="8" id="lnQ-Qo-XEa"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="113.5"/>
+        </view>
+    </objects>
+</document>

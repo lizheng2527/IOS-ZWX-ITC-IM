@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TYHReadInfo2ViewController">
+            <connections>
+                <outlet property="nameLabel" destination="LdU-Xa-c43" id="AVw-ya-tdv"/>
+                <outlet property="readBtn" destination="y8K-eg-9LK" id="lHY-pd-stA"/>
+                <outlet property="tableView" destination="HvI-lE-IIX" id="r50-d9-gec"/>
+                <outlet property="unreadBtn" destination="gJs-bo-aAd" id="opS-BR-Fer"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdU-Xa-c43">
+                    <rect key="frame" x="5" y="10" width="150" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="3QU-U1-dwf"/>
+                        <constraint firstAttribute="width" constant="150" id="uEe-XN-QRX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8K-eg-9LK">
+                    <rect key="frame" x="545" y="156" width="50" height="20"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.77672413793103445" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="07y-Jz-yOy"/>
+                        <constraint firstAttribute="width" constant="50" id="Baz-w1-QGL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                    <state key="normal" title="已读">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJs-bo-aAd">
+                    <rect key="frame" x="545" y="185" width="50" height="20"/>
+                    <color key="backgroundColor" red="0.2627450980392157" green="0.74509803921568629" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                    <state key="normal" title="未读">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HvI-lE-IIX">
+                    <rect key="frame" x="0.0" y="215" width="600" height="385"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="LdU-Xa-c43" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="1ZK-A1-bAW"/>
+                <constraint firstAttribute="bottom" secondItem="HvI-lE-IIX" secondAttribute="bottom" id="7Lh-YH-ERV"/>
+                <constraint firstItem="gJs-bo-aAd" firstAttribute="leading" secondItem="y8K-eg-9LK" secondAttribute="leading" id="8GB-eD-m0o"/>
+                <constraint firstItem="gJs-bo-aAd" firstAttribute="height" secondItem="y8K-eg-9LK" secondAttribute="height" id="L0o-Yr-6fX"/>
+                <constraint firstItem="y8K-eg-9LK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="156" id="PHl-PA-aqF"/>
+                <constraint firstItem="HvI-lE-IIX" firstAttribute="top" secondItem="gJs-bo-aAd" secondAttribute="bottom" constant="10" id="PSS-ye-fOI"/>
+                <constraint firstAttribute="trailing" secondItem="HvI-lE-IIX" secondAttribute="trailing" id="YYK-Eq-4Cv"/>
+                <constraint firstItem="gJs-bo-aAd" firstAttribute="top" secondItem="y8K-eg-9LK" secondAttribute="bottom" constant="9" id="YaG-Eb-3VW"/>
+                <constraint firstItem="gJs-bo-aAd" firstAttribute="trailing" secondItem="y8K-eg-9LK" secondAttribute="trailing" id="ci6-Lr-KXk"/>
+                <constraint firstAttribute="trailing" secondItem="y8K-eg-9LK" secondAttribute="trailing" constant="5" id="jMf-Wk-JQq"/>
+                <constraint firstItem="LdU-Xa-c43" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="uqq-b7-IEs"/>
+                <constraint firstItem="HvI-lE-IIX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="y8C-K6-YCm"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+        </view>
+    </objects>
+</document>

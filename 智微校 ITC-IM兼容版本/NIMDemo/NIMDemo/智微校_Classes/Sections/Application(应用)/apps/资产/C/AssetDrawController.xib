@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AssetDrawController">
+            <connections>
+                <outlet property="backBtn" destination="lEK-02-yeF" id="1Ep-gg-Htm"/>
+                <outlet property="clearBtn" destination="50S-EP-05H" id="Naf-c8-mxZ"/>
+                <outlet property="drawView" destination="i5M-Pr-FkT" id="fhO-tx-OSB"/>
+                <outlet property="saveBtn" destination="AHw-jH-U8m" id="b2Q-a4-sok"/>
+                <outlet property="titleLabel" destination="Y3z-Ne-ADA" id="SsV-d2-7Lq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="PPSSignatureView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50S-EP-05H">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="Hmb-kM-GXU"/>
+                        <constraint firstAttribute="width" constant="50" id="hSK-ne-4pd"/>
+                    </constraints>
+                    <state key="normal" title="Clear" image="icon_clear"/>
+                    <connections>
+                        <action selector="clearDrawAction:" destination="-1" eventType="touchUpInside" id="dqy-qp-zXw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEK-02-yeF">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="3Wd-0i-52l"/>
+                        <constraint firstAttribute="width" constant="50" id="ywX-ZL-jYh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="返回"/>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="3iK-jY-iIH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHw-jH-U8m">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="P0U-sR-Omv"/>
+                        <constraint firstAttribute="width" constant="50" id="gIe-JR-den"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="保存"/>
+                    <connections>
+                        <action selector="saveDrawAction:" destination="-1" eventType="touchUpInside" id="SlI-jj-l4j"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="签字板" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3z-Ne-ADA">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="LHd-Et-ee3"/>
+                        <constraint firstAttribute="width" constant="50" id="tJq-jT-Ylu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Y3z-Ne-ADA" secondAttribute="trailing" constant="4" id="57i-ms-QTr"/>
+                <constraint firstAttribute="trailing" secondItem="50S-EP-05H" secondAttribute="trailing" constant="162" id="8Tv-0E-MVg"/>
+                <constraint firstAttribute="bottom" secondItem="50S-EP-05H" secondAttribute="bottom" constant="7" id="DJN-pU-kLS"/>
+                <constraint firstItem="Y3z-Ne-ADA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="En2-jk-Oso"/>
+                <constraint firstItem="Y3z-Ne-ADA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="315" id="Gue-Bl-3bu"/>
+                <constraint firstItem="lEK-02-yeF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="L4d-RA-ooE"/>
+                <constraint firstAttribute="trailing" secondItem="AHw-jH-U8m" secondAttribute="trailing" constant="4" id="SR9-ib-RGA"/>
+                <constraint firstItem="50S-EP-05H" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="163" id="T4G-d1-dLj"/>
+                <constraint firstAttribute="trailing" secondItem="lEK-02-yeF" secondAttribute="trailing" constant="4" id="cV5-Ns-q4p"/>
+                <constraint firstAttribute="bottom" secondItem="AHw-jH-U8m" secondAttribute="bottom" constant="11" id="hym-Lm-PqL"/>
+                <constraint firstAttribute="bottom" secondItem="Y3z-Ne-ADA" secondAttribute="bottom" constant="315" id="mBi-9Z-xEW"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="86.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_clear" width="50" height="40"/>
+    </resources>
+</document>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TYHNewNoticeViewController">
+            <connections>
+                <outlet property="SendNoticeBtn" destination="KHY-Do-Y4V" id="IeD-ze-TlN"/>
+                <outlet property="attentionBtn" destination="2Oq-qa-T8z" id="QUl-eC-8uP"/>
+                <outlet property="deleteBtn" destination="9Ak-ql-kbt" id="q3R-uO-ch1"/>
+                <outlet property="tableView" destination="bVq-hd-taT" id="aUc-qJ-Js6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bVq-hd-taT">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Oq-qa-T8z">
+                    <rect key="frame" x="0.0" y="622" width="187.5" height="45"/>
+                    <color key="backgroundColor" red="0.042586072253644032" green="0.55703124999999998" blue="0.10461816314725328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="eET-7A-56q"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <state key="normal" title="    关注 ">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="attentionBtn:" destination="-1" eventType="touchUpInside" id="ycw-gz-upI"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ak-ql-kbt">
+                    <rect key="frame" x="187.5" y="622" width="187.5" height="45"/>
+                    <color key="backgroundColor" red="0.54058493589743595" green="0.085690659955193843" blue="0.051993954031882055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="xFm-5T-U4o"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <state key="normal" title="删除">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="deleteBtn:" destination="-1" eventType="touchUpInside" id="s8H-oh-ixR"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHY-Do-Y4V">
+                    <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                    <color key="backgroundColor" red="0.9454927884615385" green="0.9454927884615385" blue="0.9454927884615385" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="fpk-5w-RI9"/>
+                    </constraints>
+                    <state key="normal" title="新建通知" image="新建通知">
+                        <color key="titleColor" red="0.3333333432674408" green="0.3333333432674408" blue="0.3333333432674408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="sendNoticeBtn:" destination="-1" eventType="touchUpInside" id="uQW-rt-ieb"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="2Oq-qa-T8z" secondAttribute="bottom" id="2bd-ad-tKk"/>
+                <constraint firstAttribute="trailing" secondItem="9Ak-ql-kbt" secondAttribute="trailing" id="BOz-M7-kl9"/>
+                <constraint firstItem="bVq-hd-taT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Fz7-Ie-Lcp"/>
+                <constraint firstAttribute="bottom" secondItem="KHY-Do-Y4V" secondAttribute="bottom" id="Uc5-M8-iDZ"/>
+                <constraint firstAttribute="bottom" secondItem="bVq-hd-taT" secondAttribute="bottom" id="Vds-lY-oO6"/>
+                <constraint firstAttribute="bottom" secondItem="9Ak-ql-kbt" secondAttribute="bottom" id="XeR-nU-hua"/>
+                <constraint firstItem="KHY-Do-Y4V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aac-0h-2SH"/>
+                <constraint firstItem="9Ak-ql-kbt" firstAttribute="leading" secondItem="2Oq-qa-T8z" secondAttribute="trailing" id="gy1-WJ-eH0"/>
+                <constraint firstItem="2Oq-qa-T8z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rQI-Yd-LAd"/>
+                <constraint firstAttribute="trailing" secondItem="KHY-Do-Y4V" secondAttribute="trailing" id="rYA-re-wcL"/>
+                <constraint firstItem="2Oq-qa-T8z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="1/2" id="sFm-G7-isL"/>
+                <constraint firstAttribute="trailing" secondItem="bVq-hd-taT" secondAttribute="trailing" id="tvy-WL-CMJ"/>
+                <constraint firstItem="bVq-hd-taT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wso-Qf-fg3"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="新建通知" width="25" height="25"/>
+    </resources>
+</document>

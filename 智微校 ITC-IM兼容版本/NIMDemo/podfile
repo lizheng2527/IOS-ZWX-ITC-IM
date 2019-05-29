@@ -1,0 +1,30 @@
+platform :ios, '8.0'
+workspace 'NIM.xcworkspace'
+
+abstract_target 'NIMDemo' do
+    pod 'SDWebImage', ‘4.0.0’
+    pod 'Toast', '~> 3.0'
+    pod 'M80AttributedLabel', '~> 1.6.3'
+    pod 'TZImagePickerController', '~> 1.9.8'
+    pod 'PNChart', '~> 0.8.9'   
+    pod 'MJExtension', '~> 3.0.13'
+    pod 'AFNetworking', '~> 2.0'
+    pod 'CZPicker'
+    pod 'MJRefresh'
+   pod 'KRVideoPlayer', '~> 1.0.1'
+    pod 'MWPhotoBrowser', :git => 'https://github.com/EvoIos/MWPhotoBrowser.git', :commit => 'de697e101195557ddca85661ebb266fd3f10776c'
+    pod 'CTAssetsPickerController', :git => 'https://github.com/asivura/CTAssetsPickerController.git', :branch => 'master'
+    
+    target 'NIM' do
+        project 'NIM.xcodeproj'
+        pod 'FMDB', '~> 2.7.2'
+        pod 'Reachability', '~> 3.2'
+        pod 'CocoaLumberjack', '~> 3.2.1'
+        pod 'SSZipArchive', '~> 1.8.1'
+        pod 'SVProgressHUD', '~> 2.1.2'
+    end
+    
+    target 'NIMKit' do
+        project '../NIMKit/NIMKit.xcodeproj'
+    end
+end

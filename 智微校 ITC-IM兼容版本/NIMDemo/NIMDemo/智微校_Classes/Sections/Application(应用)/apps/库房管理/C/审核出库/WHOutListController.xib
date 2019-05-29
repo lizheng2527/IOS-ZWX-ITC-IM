@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WHOutListController">
+            <connections>
+                <outlet property="mainTableView" destination="F5A-fR-eOL" id="rWs-cn-q0k"/>
+                <outlet property="searchBgView" destination="bKU-fX-CNc" id="gu2-Xe-978"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F5A-fR-eOL">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kR-i4-QQU">
+                    <color key="backgroundColor" red="0.82352941180000006" green="0.84313725490000002" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Z52-ya-FP7"/>
+                    </constraints>
+                    <connections>
+                        <action selector="searchActionn:" destination="-1" eventType="touchUpInside" id="Pye-5s-AK6"/>
+                    </connections>
+                </button>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKU-fX-CNc">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_fangdajing" translatesAutoresizingMaskIntoConstraints="NO" id="FPR-uS-S4C">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="15" id="OI2-K6-AIN"/>
+                                <constraint firstAttribute="height" constant="15" id="xTW-iO-LUF"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="按领用人姓名查找" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVj-aA-Jlb">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="nbc-d1-upk"/>
+                                <constraint firstAttribute="width" constant="200" id="ns9-m9-HPG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="FPR-uS-S4C" firstAttribute="top" secondItem="bKU-fX-CNc" secondAttribute="top" constant="10" id="5fJ-vW-g6k"/>
+                        <constraint firstItem="JVj-aA-Jlb" firstAttribute="leading" secondItem="FPR-uS-S4C" secondAttribute="trailing" constant="4" id="SjV-92-cpZ"/>
+                        <constraint firstAttribute="height" constant="32" id="Vpf-HE-Ywy"/>
+                        <constraint firstItem="FPR-uS-S4C" firstAttribute="leading" secondItem="bKU-fX-CNc" secondAttribute="leading" constant="8" id="YGw-Iq-i7e"/>
+                        <constraint firstItem="JVj-aA-Jlb" firstAttribute="top" secondItem="bKU-fX-CNc" secondAttribute="top" constant="6" id="swi-6u-0fA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="F5A-fR-eOL" secondAttribute="bottom" id="FUL-Sg-6kR"/>
+                <constraint firstAttribute="trailing" secondItem="0kR-i4-QQU" secondAttribute="trailing" id="Jke-Dd-I98"/>
+                <constraint firstItem="bKU-fX-CNc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="6" id="Lnz-oq-whe"/>
+                <constraint firstItem="F5A-fR-eOL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="MmJ-Sn-buR"/>
+                <constraint firstItem="bKU-fX-CNc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="TcZ-Z3-8zf"/>
+                <constraint firstItem="0kR-i4-QQU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XnX-Jy-CIG"/>
+                <constraint firstAttribute="trailing" secondItem="bKU-fX-CNc" secondAttribute="trailing" constant="8" id="jrQ-rr-c6n"/>
+                <constraint firstAttribute="trailing" secondItem="F5A-fR-eOL" secondAttribute="trailing" id="pzq-1S-p2l"/>
+                <constraint firstItem="0kR-i4-QQU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vpc-Nj-45U"/>
+                <constraint firstItem="F5A-fR-eOL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="x4l-FP-AdI"/>
+            </constraints>
+            <point key="canvasLocation" x="84.5" y="89.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_fangdajing" width="22" height="22"/>
+    </resources>
+</document>

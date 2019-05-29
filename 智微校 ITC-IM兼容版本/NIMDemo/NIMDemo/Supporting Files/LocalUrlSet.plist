@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>测试学校</string>
+		<key>url23</key>
+		<string>http://192.168.1.7:5001/dc</string>
+		<key>url2222222</key>
+		<string>http://itc.qingcan-edu.com:8888/dc</string>
+		<key>url89</key>
+		<string>http://192.168.1.121:9999/dc-baseMySql</string>
+		<key>url=-=-=mm</key>
+		<string>http://oa.zdhx-edu.link/dc</string>
+		<key>url===</key>
+		<string>http://192.168.1.121:8020/dc</string>
+		<key>url=-=</key>
+		<string>http://192.168.1.67:8888/dc</string>
+		<key>url-</key>
+		<string>http://192.168.1.121:10000/dc-notice</string>
+		<key>url=-=-=</key>
+		<string>http://192.168.1.52:8888/dc</string>
+	</dict>
+</array>
+</plist>

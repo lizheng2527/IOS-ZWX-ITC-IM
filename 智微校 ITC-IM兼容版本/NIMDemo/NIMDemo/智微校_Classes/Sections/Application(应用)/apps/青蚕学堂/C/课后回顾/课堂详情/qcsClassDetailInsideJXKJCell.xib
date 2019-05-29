@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="veP-ib-YbU" customClass="qcsClassDetailInsideJXKJCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OmS-t1-2PV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="暂无图片Test" translatesAutoresizingMaskIntoConstraints="NO" id="7Sz-1I-dpX">
+                                <rect key="frame" x="8" y="12" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="25x-ci-6Jw"/>
+                                    <constraint firstAttribute="width" constant="60" id="YgI-zO-3Qq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NzI-Wm-CWA">
+                                <rect key="frame" x="84" y="12" width="228" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="HRH-iz-s0N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.27058823529999998" green="0.43529411759999997" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(0.0 MB)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aN-Yj-R5k">
+                                <rect key="frame" x="84" y="51" width="228" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="e1y-rH-Tft"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.27058823529999998" green="0.43529411759999997" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ulY-ZP-s5J">
+                                <rect key="frame" x="8" y="80" width="304" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="JhZ-rN-u6e"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NzI-Wm-CWA" firstAttribute="top" secondItem="OmS-t1-2PV" secondAttribute="top" constant="12" id="PlX-ee-nNU"/>
+                            <constraint firstItem="ulY-ZP-s5J" firstAttribute="leading" secondItem="OmS-t1-2PV" secondAttribute="leading" constant="8" id="Wlr-Nr-DkC"/>
+                            <constraint firstItem="7Sz-1I-dpX" firstAttribute="leading" secondItem="OmS-t1-2PV" secondAttribute="leading" constant="8" id="ZZn-wH-Xxa"/>
+                            <constraint firstAttribute="trailing" secondItem="ulY-ZP-s5J" secondAttribute="trailing" constant="8" id="Zb4-by-zKq"/>
+                            <constraint firstAttribute="bottom" secondItem="9aN-Yj-R5k" secondAttribute="bottom" constant="12" id="cRc-0x-2fC"/>
+                            <constraint firstAttribute="trailing" secondItem="NzI-Wm-CWA" secondAttribute="trailing" constant="8" id="dNt-pf-sgS"/>
+                            <constraint firstItem="7Sz-1I-dpX" firstAttribute="centerY" secondItem="OmS-t1-2PV" secondAttribute="centerY" id="dtL-Dn-XEy"/>
+                            <constraint firstAttribute="trailing" secondItem="9aN-Yj-R5k" secondAttribute="trailing" constant="8" id="kd6-Kc-rma"/>
+                            <constraint firstAttribute="bottom" secondItem="ulY-ZP-s5J" secondAttribute="bottom" constant="2" id="lVb-SO-1fn"/>
+                            <constraint firstItem="9aN-Yj-R5k" firstAttribute="leading" secondItem="7Sz-1I-dpX" secondAttribute="trailing" constant="16" id="qOi-Yw-s9c"/>
+                            <constraint firstItem="NzI-Wm-CWA" firstAttribute="leading" secondItem="7Sz-1I-dpX" secondAttribute="trailing" constant="16" id="v4X-0i-1RY"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="OmS-t1-2PV" secondAttribute="bottom" id="O5b-Fg-9tN"/>
+                <constraint firstItem="OmS-t1-2PV" firstAttribute="top" secondItem="veP-ib-YbU" secondAttribute="top" id="iHD-HE-O5L"/>
+                <constraint firstItem="OmS-t1-2PV" firstAttribute="leading" secondItem="veP-ib-YbU" secondAttribute="leading" id="lia-Mf-edE"/>
+                <constraint firstAttribute="trailing" secondItem="OmS-t1-2PV" secondAttribute="trailing" id="vTE-PL-mhG"/>
+            </constraints>
+            <connections>
+                <outlet property="imageView" destination="7Sz-1I-dpX" id="3sJ-iR-h4U"/>
+                <outlet property="processView" destination="ulY-ZP-s5J" id="X9E-8n-UIa"/>
+                <outlet property="sizeLabel" destination="9aN-Yj-R5k" id="zFf-oy-eoS"/>
+                <outlet property="titleLabel" destination="NzI-Wm-CWA" id="lYk-VJ-e3U"/>
+            </connections>
+            <point key="canvasLocation" x="5" y="85"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="暂无图片Test" width="376" height="343"/>
+    </resources>
+</document>

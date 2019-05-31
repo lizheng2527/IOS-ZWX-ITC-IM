@@ -211,6 +211,13 @@
 		EE00A19321C2830200923E57 /* qcsHomeworkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = EE00A19221C2830200923E57 /* qcsHomeworkHandler.m */; };
 		EE01010D215F0FB000BC5DD4 /* CANoticeDetailControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE01010B215F0FB000BC5DD4 /* CANoticeDetailControllerView.m */; };
 		EE01010E215F0FB000BC5DD4 /* CANoticeDetailControllerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE01010C215F0FB000BC5DD4 /* CANoticeDetailControllerView.xib */; };
+		EE05AF5A22A10D17001AC255 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE05AF4E22A10D17001AC255 /* SDCycleScrollView.m */; };
+		EE05AF5B22A10D17001AC255 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EE05AF4F22A10D17001AC255 /* UIView+SDExtension.m */; };
+		EE05AF5C22A10D17001AC255 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE05AF5022A10D17001AC255 /* SDCollectionViewCell.m */; };
+		EE05AF5D22A10D17001AC255 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE05AF5322A10D17001AC255 /* TADotView.m */; };
+		EE05AF5E22A10D17001AC255 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = EE05AF5422A10D17001AC255 /* TAPageControl.m */; };
+		EE05AF5F22A10D17001AC255 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE05AF5522A10D17001AC255 /* TAAnimatedDotView.m */; };
+		EE05AF6022A10D17001AC255 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE05AF5622A10D17001AC255 /* TAAbstractDotView.m */; };
 		EE0BDBCB2091C22400AAD516 /* qcsStudyAnalyticsMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0BDBCA2091C22400AAD516 /* qcsStudyAnalyticsMainController.m */; };
 		EE0BDBCF2091C27700AAD516 /* qcsStudyAnalyticsInsideController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0BDBCD2091C27700AAD516 /* qcsStudyAnalyticsInsideController.m */; };
 		EE0BDBD02091C27700AAD516 /* qcsStudyAnalyticsInsideController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0BDBCE2091C27700AAD516 /* qcsStudyAnalyticsInsideController.xib */; };
@@ -307,13 +314,6 @@
 		EE3FFC552079AE48004CD2A9 /* qcsClassReviewInsideController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3FFC532079AE48004CD2A9 /* qcsClassReviewInsideController.m */; };
 		EE3FFC562079AE48004CD2A9 /* qcsClassReviewInsideController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3FFC542079AE48004CD2A9 /* qcsClassReviewInsideController.xib */; };
 		EE3FFC592079AF10004CD2A9 /* QCSHomeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3FFC582079AF10004CD2A9 /* QCSHomeLabel.m */; };
-		EE3FFC6A2079B01B004CD2A9 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3FFC5D2079B01B004CD2A9 /* TAAbstractDotView.m */; };
-		EE3FFC6B2079B01B004CD2A9 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3FFC5F2079B01B004CD2A9 /* TAAnimatedDotView.m */; };
-		EE3FFC6C2079B01B004CD2A9 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3FFC612079B01B004CD2A9 /* TADotView.m */; };
-		EE3FFC6D2079B01B004CD2A9 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3FFC632079B01B004CD2A9 /* TAPageControl.m */; };
-		EE3FFC6E2079B01B004CD2A9 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3FFC652079B01B004CD2A9 /* SDCollectionViewCell.m */; };
-		EE3FFC6F2079B01B004CD2A9 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3FFC672079B01B004CD2A9 /* SDCycleScrollView.m */; };
-		EE3FFC702079B01B004CD2A9 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3FFC692079B01B004CD2A9 /* UIView+SDExtension.m */; };
 		EE3FFC742079CF83004CD2A9 /* qcsClassReviewInsideClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3FFC722079CF83004CD2A9 /* qcsClassReviewInsideClassCell.m */; };
 		EE3FFC752079CF83004CD2A9 /* qcsClassReviewInsideClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3FFC732079CF83004CD2A9 /* qcsClassReviewInsideClassCell.xib */; };
 		EE3FFC792079CF96004CD2A9 /* qcsClassReviewInsideStudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3FFC772079CF96004CD2A9 /* qcsClassReviewInsideStudentCell.m */; };
@@ -1566,6 +1566,20 @@
 		EE01010A215F0FB000BC5DD4 /* CANoticeDetailControllerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CANoticeDetailControllerView.h; sourceTree = "<group>"; };
 		EE01010B215F0FB000BC5DD4 /* CANoticeDetailControllerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CANoticeDetailControllerView.m; sourceTree = "<group>"; };
 		EE01010C215F0FB000BC5DD4 /* CANoticeDetailControllerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CANoticeDetailControllerView.xib; sourceTree = "<group>"; };
+		EE05AF4B22A10D17001AC255 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
+		EE05AF4C22A10D17001AC255 /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
+		EE05AF4D22A10D17001AC255 /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
+		EE05AF4E22A10D17001AC255 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
+		EE05AF4F22A10D17001AC255 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		EE05AF5022A10D17001AC255 /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
+		EE05AF5222A10D17001AC255 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		EE05AF5322A10D17001AC255 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		EE05AF5422A10D17001AC255 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		EE05AF5522A10D17001AC255 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		EE05AF5622A10D17001AC255 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		EE05AF5722A10D17001AC255 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		EE05AF5822A10D17001AC255 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		EE05AF5922A10D17001AC255 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
 		EE0BDBC92091C22400AAD516 /* qcsStudyAnalyticsMainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qcsStudyAnalyticsMainController.h; sourceTree = "<group>"; };
 		EE0BDBCA2091C22400AAD516 /* qcsStudyAnalyticsMainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = qcsStudyAnalyticsMainController.m; sourceTree = "<group>"; };
 		EE0BDBCC2091C27700AAD516 /* qcsStudyAnalyticsInsideController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qcsStudyAnalyticsInsideController.h; sourceTree = "<group>"; };
@@ -1724,20 +1738,6 @@
 		EE3FFC542079AE48004CD2A9 /* qcsClassReviewInsideController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = qcsClassReviewInsideController.xib; sourceTree = "<group>"; };
 		EE3FFC572079AF10004CD2A9 /* QCSHomeLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCSHomeLabel.h; sourceTree = "<group>"; };
 		EE3FFC582079AF10004CD2A9 /* QCSHomeLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCSHomeLabel.m; sourceTree = "<group>"; };
-		EE3FFC5C2079B01B004CD2A9 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
-		EE3FFC5D2079B01B004CD2A9 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
-		EE3FFC5E2079B01B004CD2A9 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
-		EE3FFC5F2079B01B004CD2A9 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
-		EE3FFC602079B01B004CD2A9 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
-		EE3FFC612079B01B004CD2A9 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
-		EE3FFC622079B01B004CD2A9 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
-		EE3FFC632079B01B004CD2A9 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
-		EE3FFC642079B01B004CD2A9 /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
-		EE3FFC652079B01B004CD2A9 /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
-		EE3FFC662079B01B004CD2A9 /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
-		EE3FFC672079B01B004CD2A9 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
-		EE3FFC682079B01B004CD2A9 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
-		EE3FFC692079B01B004CD2A9 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
 		EE3FFC712079CF83004CD2A9 /* qcsClassReviewInsideClassCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qcsClassReviewInsideClassCell.h; sourceTree = "<group>"; };
 		EE3FFC722079CF83004CD2A9 /* qcsClassReviewInsideClassCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = qcsClassReviewInsideClassCell.m; sourceTree = "<group>"; };
 		EE3FFC732079CF83004CD2A9 /* qcsClassReviewInsideClassCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = qcsClassReviewInsideClassCell.xib; sourceTree = "<group>"; };
@@ -3930,6 +3930,7 @@
 		834DC5911F18BE1800C9E0B3 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				EE05AF4A22A10D17001AC255 /* SDCycleScrollView */,
 				830AE54E1F2880EE00BB0AAD /* SVProgressHUD */,
 			);
 			path = Vendors;
@@ -4125,6 +4126,35 @@
 				EE00A19221C2830200923E57 /* qcsHomeworkHandler.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EE05AF4A22A10D17001AC255 /* SDCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				EE05AF4B22A10D17001AC255 /* UIView+SDExtension.h */,
+				EE05AF4C22A10D17001AC255 /* SDCycleScrollView.h */,
+				EE05AF4D22A10D17001AC255 /* SDCollectionViewCell.h */,
+				EE05AF4E22A10D17001AC255 /* SDCycleScrollView.m */,
+				EE05AF4F22A10D17001AC255 /* UIView+SDExtension.m */,
+				EE05AF5022A10D17001AC255 /* SDCollectionViewCell.m */,
+				EE05AF5122A10D17001AC255 /* PageControl */,
+			);
+			path = SDCycleScrollView;
+			sourceTree = "<group>";
+		};
+		EE05AF5122A10D17001AC255 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				EE05AF5222A10D17001AC255 /* TAAbstractDotView.h */,
+				EE05AF5322A10D17001AC255 /* TADotView.m */,
+				EE05AF5422A10D17001AC255 /* TAPageControl.m */,
+				EE05AF5522A10D17001AC255 /* TAAnimatedDotView.m */,
+				EE05AF5622A10D17001AC255 /* TAAbstractDotView.m */,
+				EE05AF5722A10D17001AC255 /* TADotView.h */,
+				EE05AF5822A10D17001AC255 /* TAAnimatedDotView.h */,
+				EE05AF5922A10D17001AC255 /* TAPageControl.h */,
+			);
+			path = PageControl;
 			sourceTree = "<group>";
 		};
 		EE0BDBD62091D2CB00AAD516 /* CWLateralSlide */ = {
@@ -4398,36 +4428,6 @@
 				EE3A679C2011E02A001F1A8E /* KPDropMenu.m */,
 			);
 			path = KPDropMenu;
-			sourceTree = "<group>";
-		};
-		EE3FFC5A2079B01B004CD2A9 /* SDCycleScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				EE3FFC5B2079B01B004CD2A9 /* PageControl */,
-				EE3FFC642079B01B004CD2A9 /* SDCollectionViewCell.h */,
-				EE3FFC652079B01B004CD2A9 /* SDCollectionViewCell.m */,
-				EE3FFC662079B01B004CD2A9 /* SDCycleScrollView.h */,
-				EE3FFC672079B01B004CD2A9 /* SDCycleScrollView.m */,
-				EE3FFC682079B01B004CD2A9 /* UIView+SDExtension.h */,
-				EE3FFC692079B01B004CD2A9 /* UIView+SDExtension.m */,
-			);
-			name = SDCycleScrollView;
-			path = "../../../../../../../../../../../Downloads/SDCycleScrollView-master/SDCycleScrollView/Lib/SDCycleScrollView";
-			sourceTree = "<group>";
-		};
-		EE3FFC5B2079B01B004CD2A9 /* PageControl */ = {
-			isa = PBXGroup;
-			children = (
-				EE3FFC5C2079B01B004CD2A9 /* TAAbstractDotView.h */,
-				EE3FFC5D2079B01B004CD2A9 /* TAAbstractDotView.m */,
-				EE3FFC5E2079B01B004CD2A9 /* TAAnimatedDotView.h */,
-				EE3FFC5F2079B01B004CD2A9 /* TAAnimatedDotView.m */,
-				EE3FFC602079B01B004CD2A9 /* TADotView.h */,
-				EE3FFC612079B01B004CD2A9 /* TADotView.m */,
-				EE3FFC622079B01B004CD2A9 /* TAPageControl.h */,
-				EE3FFC632079B01B004CD2A9 /* TAPageControl.m */,
-			);
-			path = PageControl;
 			sourceTree = "<group>";
 		};
 		EE3FFC7B2079F061004CD2A9 /* 师生互动表 */ = {
@@ -7190,7 +7190,6 @@
 				EE22FCA220B2B321005E26A1 /* VideoHandler */,
 				EE0BDBD62091D2CB00AAD516 /* CWLateralSlide */,
 				EE2E001A207B651A0062AB74 /* LYEmptyView */,
-				EE3FFC5A2079B01B004CD2A9 /* SDCycleScrollView */,
 				EE95F2FF207383F00067F2E2 /* SlideView */,
 			);
 			path = Vendor;
@@ -8272,7 +8271,6 @@
 				EE4202311FFE15400009D064 /* UIViewController+ACMediaExt.m in Sources */,
 				EE42023E1FFE15400009D064 /* REquipmentTypeL2Cell.m in Sources */,
 				EE4201981FFE15400009D064 /* YLGIFImage.m in Sources */,
-				EE3FFC6C2079B01B004CD2A9 /* TADotView.m in Sources */,
 				61E471111B7D963E00F4A1BF /* NTESCustomSysNotificationSender.m in Sources */,
 				EE2E0050207DEE6B0062AB74 /* qcsClassDetailInsideSXBJDetailController.m in Sources */,
 				EE95F3252079A86B0067F2E2 /* qcsClassReviewMainController.m in Sources */,
@@ -8286,6 +8284,7 @@
 				EEA3371421BA6BE5000B9759 /* SSChatMessagelLayout.m in Sources */,
 				EE4202281FFE15400009D064 /* RMPaiController.m in Sources */,
 				61E471451B7D963E00F4A1BF /* NTESGalleryViewController.m in Sources */,
+				EE05AF5B22A10D17001AC255 /* UIView+SDExtension.m in Sources */,
 				61E4715D1B7D963E00F4A1BF /* NTESClientsTableViewController.m in Sources */,
 				EE42020F1FFE15400009D064 /* TranscriptCell.m in Sources */,
 				EE4201C01FFE15400009D064 /* HWDownloadCell.m in Sources */,
@@ -8325,7 +8324,6 @@
 				61E471941B7D96AA00F4A1BF /* NTESService.m in Sources */,
 				EE4201A31FFE15400009D064 /* ZLPhotoPickerBrowserViewController.m in Sources */,
 				61E470F61B7D963E00F4A1BF /* NTESColorButtonCell.m in Sources */,
-				EE3FFC6D2079B01B004CD2A9 /* TAPageControl.m in Sources */,
 				EE4203D81FFE15420009D064 /* YMTapGestureRecongnizer.m in Sources */,
 				EE4202CA1FFE15410009D064 /* TakeCourseDetailViewController.m in Sources */,
 				61518A561CA233BB0061C4A9 /* NTESDemoService.m in Sources */,
@@ -8340,7 +8338,6 @@
 				61A8EF341BB67F0900033FB8 /* UIResponder+NTESFirstResponder.m in Sources */,
 				EE2E005F207DF6990062AB74 /* qcsClassDetailInsideXZTDetailCell.m in Sources */,
 				EE4203851FFE15410009D064 /* UIButton+Extention.m in Sources */,
-				EE3FFC6A2079B01B004CD2A9 /* TAAbstractDotView.m in Sources */,
 				EE42032E1FFE15410009D064 /* PAddServiceApplyCell.m in Sources */,
 				EE4203AF1FFE15410009D064 /* NSMutableAttributedString+MLLabel.m in Sources */,
 				EE4203441FFE15410009D064 /* PServiceApplyMainCell.m in Sources */,
@@ -8364,6 +8361,7 @@
 				EE4202D31FFE15410009D064 /* TakeCourseMineCell.m in Sources */,
 				EE95F2D72071DD5C0067F2E2 /* QCSchoolCommonHeaderView.m in Sources */,
 				EE2E0025207B651A0062AB74 /* LYEmptyView.m in Sources */,
+				EE05AF5C22A10D17001AC255 /* SDCollectionViewCell.m in Sources */,
 				EEB1ECA92099A21E0005DAEB /* qcsStudyAnalyticsSearcuClassController.m in Sources */,
 				EE4201A21FFE15400009D064 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */,
 				EEB1014222278FA10069D19E /* TYHIMHandler.m in Sources */,
@@ -8378,6 +8376,7 @@
 				EE4202461FFE15400009D064 /* MRADetailBottomCell.m in Sources */,
 				EE00A18E21C2703700923E57 /* ZXCollectionCell.m in Sources */,
 				EEDAC02621BA4EAC001DC393 /* TYHNoticeIconFontDictionary.m in Sources */,
+				EE05AF5F22A10D17001AC255 /* TAAnimatedDotView.m in Sources */,
 				EE42020A1FFE15400009D064 /* WHOutResignCell.m in Sources */,
 				EE4203171FFE15410009D064 /* PAddServerApplicationController.m in Sources */,
 				61E471141B7D963E00F4A1BF /* NTESGroupedDataCollection.m in Sources */,
@@ -8403,6 +8402,7 @@
 				EE0BDBD42091D28F00AAD516 /* qcsMenuTableController.m in Sources */,
 				EE4203481FFE15410009D064 /* PUserInfoType1Cell.m in Sources */,
 				EE3FFC882079F21D004CD2A9 /* qcsClassStasticMainController.m in Sources */,
+				EE05AF5A22A10D17001AC255 /* SDCycleScrollView.m in Sources */,
 				EE4201791FFE15400009D064 /* MJPhotoView.m in Sources */,
 				EE4203B31FFE15410009D064 /* NSAttributedString+MLExpression.m in Sources */,
 				EE4202191FFE15400009D064 /* MyReairApplicationMainController.m in Sources */,
@@ -8541,7 +8541,6 @@
 				EE4202161FFE15400009D064 /* MRFeedBackListCell.m in Sources */,
 				EE4203AB1FFE15410009D064 /* NSString+NSString_ILExtension.m in Sources */,
 				834DC5CA1F1C9F2A00C9E0B3 /* NTESWhiteboardAttachment.m in Sources */,
-				EE3FFC702079B01B004CD2A9 /* UIView+SDExtension.m in Sources */,
 				EE4203841FFE15410009D064 /* TYHHomeLabel.m in Sources */,
 				EE4201871FFE15400009D064 /* SGQRCodeTool.m in Sources */,
 				EEA3366C21BA6BE4000B9759 /* SSChatMessage.m in Sources */,
@@ -8593,6 +8592,7 @@
 				EE0BDBE42091D2CB00AAD516 /* CWLateralSlideConfiguration.m in Sources */,
 				EE3FFC912079F25F004CD2A9 /* qcsClassInteractionMainController.m in Sources */,
 				612CACEE1BB1484C00C348B5 /* NTESContactDataMember.m in Sources */,
+				EE05AF5D22A10D17001AC255 /* TADotView.m in Sources */,
 				EE4202481FFE15400009D064 /* MRADetailSeviceCell.m in Sources */,
 				EE4202221FFE15400009D064 /* TYHNewRepairController.m in Sources */,
 				EE4203831FFE15410009D064 /* TYHCarButton.m in Sources */,
@@ -8636,7 +8636,6 @@
 				EE4202B01FFE15400009D064 /* AssetReturnDetailController.m in Sources */,
 				61E471621B7D963E00F4A1BF /* NTESAboutViewController.m in Sources */,
 				EE42025C1FFE15400009D064 /* RRecordDetailController.m in Sources */,
-				EE3FFC6B2079B01B004CD2A9 /* TAAnimatedDotView.m in Sources */,
 				EEB1ECAE2099A2300005DAEB /* qcsStudyAnalyticsSearcuStudentController.m in Sources */,
 				EE42015E1FFE15400009D064 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				EE4202121FFE15400009D064 /* MRDetailController.m in Sources */,
@@ -8669,7 +8668,6 @@
 				EE4203641FFE15410009D064 /* TYHNewAppController.m in Sources */,
 				EE4201AD1FFE15400009D064 /* ZLPhotoPickerGroupViewController.m in Sources */,
 				EE4203191FFE15410009D064 /* PAddVisitRecordController.m in Sources */,
-				EE3FFC6E2079B01B004CD2A9 /* SDCollectionViewCell.m in Sources */,
 				EE4203A11FFE15410009D064 /* SchoolMatesModel.m in Sources */,
 				EE4201621FFE15400009D064 /* HPTextViewInternal.m in Sources */,
 				EE00A18421C2703700923E57 /* qcsHomeworkSelectCell.m in Sources */,
@@ -8749,8 +8747,8 @@
 				EE4202F41FFE15410009D064 /* ImageCollectionCell.m in Sources */,
 				EE4203921FFE15410009D064 /* TYHContactSchoolController.m in Sources */,
 				61E471071B7D963E00F4A1BF /* NTESSearchTeamViewController.m in Sources */,
+				EE05AF6022A10D17001AC255 /* TAAbstractDotView.m in Sources */,
 				EE2E00A8207F14630062AB74 /* qcsClassReviewInsideStudentController.m in Sources */,
-				EE3FFC6F2079B01B004CD2A9 /* SDCycleScrollView.m in Sources */,
 				EE4202ED1FFE15410009D064 /* SendModel.m in Sources */,
 				61E471671B7D963E00F4A1BF /* NTESSettingSwitcherCell.m in Sources */,
 				EE3FFC792079CF96004CD2A9 /* qcsClassReviewInsideStudentCell.m in Sources */,
@@ -8917,6 +8915,7 @@
 				EE4203321FFE15410009D064 /* PApplyProjectApprovalCell.m in Sources */,
 				EE4202BC1FFE15410009D064 /* AssetDiliverCell.m in Sources */,
 				EE4202651FFE15400009D064 /* RNewRecordCell.m in Sources */,
+				EE05AF5E22A10D17001AC255 /* TAPageControl.m in Sources */,
 				EE4201A71FFE15400009D064 /* ZLPhotoPickerCustomToolBarView.m in Sources */,
 				EE4827DD201882EB00605E1B /* CAEvaluateController.m in Sources */,
 				EEA3367221BA6BE4000B9759 /* SSChatMapController.m in Sources */,

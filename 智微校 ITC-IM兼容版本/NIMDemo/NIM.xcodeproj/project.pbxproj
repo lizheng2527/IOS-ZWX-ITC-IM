@@ -230,6 +230,8 @@
 		EE0BDBE52091D2CB00AAD516 /* UIViewController+CWLateralSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0BDBE02091D2CB00AAD516 /* UIViewController+CWLateralSlide.m */; };
 		EE0EBD6321BB999700013F23 /* SSChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0EBD6221BB999700013F23 /* SSChatModel.m */; };
 		EE0EBD6621BB9A1000013F23 /* SSChatHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0EBD6521BB9A1000013F23 /* SSChatHandler.m */; };
+		EE11679E2361362800C95134 /* NTESWorkflowViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE11679C2361362800C95134 /* NTESWorkflowViewCell.m */; };
+		EE11679F2361362800C95134 /* NTESWorkflowViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE11679D2361362800C95134 /* NTESWorkflowViewCell.xib */; };
 		EE147906201084340099CC02 /* TYHClassAttendanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE147905201084340099CC02 /* TYHClassAttendanceController.m */; };
 		EE1F0698212FACFC005353DE /* SubmitHomeworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1F0697212FACFC005353DE /* SubmitHomeworkViewController.m */; };
 		EE22590121B8C2CC00E1D1CD /* appSourceITC.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE22590021B8C2CC00E1D1CD /* appSourceITC.plist */; };
@@ -956,8 +958,6 @@
 		EE4203D61FFE15420009D064 /* YMShowImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4201061FFE153F0009D064 /* YMShowImageView.m */; };
 		EE4203D71FFE15420009D064 /* YMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4201081FFE153F0009D064 /* YMTableViewCell.m */; };
 		EE4203D81FFE15420009D064 /* YMTapGestureRecongnizer.m in Sources */ = {isa = PBXBuildFile; fileRef = EE42010A1FFE153F0009D064 /* YMTapGestureRecongnizer.m */; };
-		EE4203D91FFE15420009D064 /* TYHLoginAjaxHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = EE42010E1FFE153F0009D064 /* TYHLoginAjaxHandler.m */; };
-		EE4203DA1FFE15420009D064 /* TYHLoginInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4201101FFE153F0009D064 /* TYHLoginInfoModel.m */; };
 		EE4203DB1FFE15420009D064 /* NTESLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4201131FFE153F0009D064 /* NTESLoginViewController.m */; };
 		EE4203DC1FFE15420009D064 /* NTESLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE4201141FFE153F0009D064 /* NTESLoginViewController.xib */; };
 		EE4203DD1FFE15420009D064 /* TYHFindPasswordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4201161FFE153F0009D064 /* TYHFindPasswordCell.m */; };
@@ -1176,7 +1176,6 @@
 		EEA3371821BA6BE5000B9759 /* icon_bofang.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA3366921BA6BE4000B9759 /* icon_bofang.png */; };
 		EEA3371921BA6BE5000B9759 /* icon_zanting.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA3366A21BA6BE4000B9759 /* icon_zanting.png */; };
 		EEA3371A21BA6BE5000B9759 /* icon_fanhui.png in Resources */ = {isa = PBXBuildFile; fileRef = EEA3366B21BA6BE4000B9759 /* icon_fanhui.png */; };
-		EEB1014222278FA10069D19E /* TYHIMHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB1014122278FA10069D19E /* TYHIMHandler.m */; };
 		EEB101462227CEED0069D19E /* TYHIMAddNoticeControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB101442227CEED0069D19E /* TYHIMAddNoticeControllerView.m */; };
 		EEB101472227CEED0069D19E /* TYHIMAddNoticeControllerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEB101452227CEED0069D19E /* TYHIMAddNoticeControllerView.xib */; };
 		EEB1ECA92099A21E0005DAEB /* qcsStudyAnalyticsSearcuClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB1ECA72099A21D0005DAEB /* qcsStudyAnalyticsSearcuClassController.m */; };
@@ -1201,6 +1200,14 @@
 		EEDAC02021BA3D2E001DC393 /* TBCityIconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDAC01921BA3D2E001DC393 /* TBCityIconFont.m */; };
 		EEDAC02321BA4878001DC393 /* TYHNoticeIconFontDic.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDAC02221BA4878001DC393 /* TYHNoticeIconFontDic.m */; };
 		EEDAC02621BA4EAC001DC393 /* TYHNoticeIconFontDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDAC02521BA4EAC001DC393 /* TYHNoticeIconFontDictionary.m */; };
+		EEFF02CF236033E5008B1240 /* TYHLoginAjaxHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFF02CB236033E5008B1240 /* TYHLoginAjaxHandler.m */; };
+		EEFF02D0236033E5008B1240 /* TYHLoginInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFF02CC236033E5008B1240 /* TYHLoginInfoModel.m */; };
+		EEFF02D1236033E5008B1240 /* TYHIMHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFF02CD236033E5008B1240 /* TYHIMHandler.m */; };
+		EEFF02D92360340A008B1240 /* NTESWorkflowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFF02D323603409008B1240 /* NTESWorkflowViewController.m */; };
+		EEFF02DA2360340A008B1240 /* NTESWorkflowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEFF02D423603409008B1240 /* NTESWorkflowViewController.xib */; };
+		EEFF02DB2360340A008B1240 /* NTESWorkflowTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFF02D523603409008B1240 /* NTESWorkflowTitleViewController.m */; };
+		EEFF02DE23603480008B1240 /* NTESNetWorkflowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFF02DD23603480008B1240 /* NTESNetWorkflowViewController.m */; };
+		EEFF02E123603CB3008B1240 /* NTESWorkflowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFF02E023603CB3008B1240 /* NTESWorkflowModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1602,6 +1609,9 @@
 		EE0EBD6221BB999700013F23 /* SSChatModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSChatModel.m; sourceTree = "<group>"; };
 		EE0EBD6421BB9A1000013F23 /* SSChatHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSChatHandler.h; sourceTree = "<group>"; };
 		EE0EBD6521BB9A1000013F23 /* SSChatHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSChatHandler.m; sourceTree = "<group>"; };
+		EE11679B2361362800C95134 /* NTESWorkflowViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESWorkflowViewCell.h; sourceTree = "<group>"; };
+		EE11679C2361362800C95134 /* NTESWorkflowViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTESWorkflowViewCell.m; sourceTree = "<group>"; };
+		EE11679D2361362800C95134 /* NTESWorkflowViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NTESWorkflowViewCell.xib; sourceTree = "<group>"; };
 		EE147904201084340099CC02 /* TYHClassAttendanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYHClassAttendanceController.h; sourceTree = "<group>"; };
 		EE147905201084340099CC02 /* TYHClassAttendanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYHClassAttendanceController.m; sourceTree = "<group>"; };
 		EE1F0696212FACFB005353DE /* SubmitHomeworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitHomeworkViewController.h; sourceTree = "<group>"; };
@@ -1998,10 +2008,6 @@
 		EE4201081FFE153F0009D064 /* YMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMTableViewCell.m; sourceTree = "<group>"; };
 		EE4201091FFE153F0009D064 /* YMTapGestureRecongnizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMTapGestureRecongnizer.h; sourceTree = "<group>"; };
 		EE42010A1FFE153F0009D064 /* YMTapGestureRecongnizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMTapGestureRecongnizer.m; sourceTree = "<group>"; };
-		EE42010D1FFE153F0009D064 /* TYHLoginAjaxHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYHLoginAjaxHandler.h; sourceTree = "<group>"; };
-		EE42010E1FFE153F0009D064 /* TYHLoginAjaxHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYHLoginAjaxHandler.m; sourceTree = "<group>"; };
-		EE42010F1FFE153F0009D064 /* TYHLoginInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYHLoginInfoModel.h; sourceTree = "<group>"; };
-		EE4201101FFE153F0009D064 /* TYHLoginInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYHLoginInfoModel.m; sourceTree = "<group>"; };
 		EE4201121FFE153F0009D064 /* NTESLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESLoginViewController.h; sourceTree = "<group>"; };
 		EE4201131FFE153F0009D064 /* NTESLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESLoginViewController.m; sourceTree = "<group>"; };
 		EE4201141FFE153F0009D064 /* NTESLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NTESLoginViewController.xib; sourceTree = "<group>"; };
@@ -3147,8 +3153,6 @@
 		EEA3366921BA6BE4000B9759 /* icon_bofang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_bofang.png; sourceTree = "<group>"; };
 		EEA3366A21BA6BE4000B9759 /* icon_zanting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_zanting.png; sourceTree = "<group>"; };
 		EEA3366B21BA6BE4000B9759 /* icon_fanhui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_fanhui.png; sourceTree = "<group>"; };
-		EEB1014022278FA10069D19E /* TYHIMHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYHIMHandler.h; sourceTree = "<group>"; };
-		EEB1014122278FA10069D19E /* TYHIMHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYHIMHandler.m; sourceTree = "<group>"; };
 		EEB101432227CEED0069D19E /* TYHIMAddNoticeControllerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYHIMAddNoticeControllerView.h; sourceTree = "<group>"; };
 		EEB101442227CEED0069D19E /* TYHIMAddNoticeControllerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYHIMAddNoticeControllerView.m; sourceTree = "<group>"; };
 		EEB101452227CEED0069D19E /* TYHIMAddNoticeControllerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TYHIMAddNoticeControllerView.xib; sourceTree = "<group>"; };
@@ -3193,6 +3197,21 @@
 		EEDAC02421BA4EAC001DC393 /* TYHNoticeIconFontDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYHNoticeIconFontDictionary.h; sourceTree = "<group>"; };
 		EEDAC02521BA4EAC001DC393 /* TYHNoticeIconFontDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYHNoticeIconFontDictionary.m; sourceTree = "<group>"; };
 		EEF144E120F37793006DA456 /* 智微校.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "智微校.entitlements"; sourceTree = "<group>"; };
+		EEFF02C9236033E5008B1240 /* TYHLoginInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYHLoginInfoModel.h; sourceTree = "<group>"; };
+		EEFF02CA236033E5008B1240 /* TYHLoginAjaxHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYHLoginAjaxHandler.h; sourceTree = "<group>"; };
+		EEFF02CB236033E5008B1240 /* TYHLoginAjaxHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYHLoginAjaxHandler.m; sourceTree = "<group>"; };
+		EEFF02CC236033E5008B1240 /* TYHLoginInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYHLoginInfoModel.m; sourceTree = "<group>"; };
+		EEFF02CD236033E5008B1240 /* TYHIMHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYHIMHandler.m; sourceTree = "<group>"; };
+		EEFF02CE236033E5008B1240 /* TYHIMHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYHIMHandler.h; sourceTree = "<group>"; };
+		EEFF02D323603409008B1240 /* NTESWorkflowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESWorkflowViewController.m; sourceTree = "<group>"; };
+		EEFF02D423603409008B1240 /* NTESWorkflowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NTESWorkflowViewController.xib; sourceTree = "<group>"; };
+		EEFF02D523603409008B1240 /* NTESWorkflowTitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESWorkflowTitleViewController.m; sourceTree = "<group>"; };
+		EEFF02D623603409008B1240 /* NTESWorkflowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESWorkflowViewController.h; sourceTree = "<group>"; };
+		EEFF02D723603409008B1240 /* NTESWorkflowTitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESWorkflowTitleViewController.h; sourceTree = "<group>"; };
+		EEFF02DC23603480008B1240 /* NTESNetWorkflowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESNetWorkflowViewController.h; sourceTree = "<group>"; };
+		EEFF02DD23603480008B1240 /* NTESNetWorkflowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTESNetWorkflowViewController.m; sourceTree = "<group>"; };
+		EEFF02DF23603CB3008B1240 /* NTESWorkflowModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESWorkflowModel.h; sourceTree = "<group>"; };
+		EEFF02E023603CB3008B1240 /* NTESWorkflowModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTESWorkflowModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4185,6 +4204,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		EE11678E2361338A00C95134 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				EE11679B2361362800C95134 /* NTESWorkflowViewCell.h */,
+				EE11679C2361362800C95134 /* NTESWorkflowViewCell.m */,
+				EE11679D2361362800C95134 /* NTESWorkflowViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		EE1479002010831A0099CC02 /* 课堂考勤 */ = {
 			isa = PBXGroup;
 			children = (
@@ -4959,12 +4988,12 @@
 		EE42010C1FFE153F0009D064 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EE42010D1FFE153F0009D064 /* TYHLoginAjaxHandler.h */,
-				EE42010E1FFE153F0009D064 /* TYHLoginAjaxHandler.m */,
-				EE42010F1FFE153F0009D064 /* TYHLoginInfoModel.h */,
-				EE4201101FFE153F0009D064 /* TYHLoginInfoModel.m */,
-				EEB1014022278FA10069D19E /* TYHIMHandler.h */,
-				EEB1014122278FA10069D19E /* TYHIMHandler.m */,
+				EEFF02CE236033E5008B1240 /* TYHIMHandler.h */,
+				EEFF02CD236033E5008B1240 /* TYHIMHandler.m */,
+				EEFF02CA236033E5008B1240 /* TYHLoginAjaxHandler.h */,
+				EEFF02CB236033E5008B1240 /* TYHLoginAjaxHandler.m */,
+				EEFF02C9236033E5008B1240 /* TYHLoginInfoModel.h */,
+				EEFF02CC236033E5008B1240 /* TYHLoginInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -5822,6 +5851,7 @@
 		EE42FCE91FFE153E0009D064 /* apps */ = {
 			isa = PBXGroup;
 			children = (
+				EEFF02BE235FE3BE008B1240 /* 工作流 */,
 				EE95F2C42071DD5B0067F2E2 /* 青蚕学堂 */,
 				EE1479002010831A0099CC02 /* 课堂考勤 */,
 				EE42FCEA1FFE153E0009D064 /* 作业 */,
@@ -7649,6 +7679,39 @@
 			path = LLSwitch;
 			sourceTree = "<group>";
 		};
+		EEFF02BE235FE3BE008B1240 /* 工作流 */ = {
+			isa = PBXGroup;
+			children = (
+				EE11678E2361338A00C95134 /* cell */,
+				EEFF02D82360340A008B1240 /* Model */,
+				EEFF02D223603409008B1240 /* Vc */,
+			);
+			path = "工作流";
+			sourceTree = "<group>";
+		};
+		EEFF02D223603409008B1240 /* Vc */ = {
+			isa = PBXGroup;
+			children = (
+				EEFF02D623603409008B1240 /* NTESWorkflowViewController.h */,
+				EEFF02D323603409008B1240 /* NTESWorkflowViewController.m */,
+				EEFF02D423603409008B1240 /* NTESWorkflowViewController.xib */,
+				EEFF02D523603409008B1240 /* NTESWorkflowTitleViewController.m */,
+				EEFF02D723603409008B1240 /* NTESWorkflowTitleViewController.h */,
+			);
+			path = Vc;
+			sourceTree = "<group>";
+		};
+		EEFF02D82360340A008B1240 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EEFF02DC23603480008B1240 /* NTESNetWorkflowViewController.h */,
+				EEFF02DD23603480008B1240 /* NTESNetWorkflowViewController.m */,
+				EEFF02DF23603CB3008B1240 /* NTESWorkflowModel.h */,
+				EEFF02E023603CB3008B1240 /* NTESWorkflowModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -7838,6 +7901,7 @@
 				EE4201861FFE15400009D064 /* SGQRCode.bundle in Resources */,
 				EE4203881FFE15410009D064 /* starFore@3x.png in Resources */,
 				EEA336D221BA6BE5000B9759 /* Expression_29@2x.png in Resources */,
+				EE11679F2361362800C95134 /* NTESWorkflowViewCell.xib in Resources */,
 				EE4201DF1FFE15400009D064 /* WHApplicationController.xib in Resources */,
 				EE3A67A22011E5EF001F1A8E /* CAMainListController.xib in Resources */,
 				EE323143200F57F000E371FF /* NTESVideoViewController.xib in Resources */,
@@ -8029,6 +8093,7 @@
 				EE95F2D92071DD5C0067F2E2 /* QCSchoolCommonItemCell.xib in Resources */,
 				EE4201741FFE15400009D064 /* MJPhotoBrowser.bundle in Resources */,
 				61E471601B7D963E00F4A1BF /* NTESNoDisturbSettingViewController.xib in Resources */,
+				EEFF02DA2360340A008B1240 /* NTESWorkflowViewController.xib in Resources */,
 				EE4202171FFE15400009D064 /* MRFeedBackListCell.xib in Resources */,
 				EEA336ED21BA6BE5000B9759 /* Expression_22@2x.png in Resources */,
 				61ED4F461AE4FA020073DBD9 /* Files in Resources */,
@@ -8228,6 +8293,7 @@
 				EE4202131FFE15400009D064 /* MRDMainController.m in Sources */,
 				6118F5A71C5A0FC1009AF01E /* UINavigationController+Swizzling.m in Sources */,
 				EE4202961FFE15400009D064 /* AssetApplyCheckController.m in Sources */,
+				EEFF02D92360340A008B1240 /* NTESWorkflowViewController.m in Sources */,
 				EE4201A61FFE15400009D064 /* ZLPhotoPickerBrowserPhotoView.m in Sources */,
 				EE4201EF1FFE15400009D064 /* WHNetHelper.m in Sources */,
 				61E4719C1B7D9C8300F4A1BF /* NTESSessionViewController.m in Sources */,
@@ -8277,6 +8343,7 @@
 				EE42022A1FFE15400009D064 /* ACMediaImageCell.m in Sources */,
 				EE4202DC1FFE15410009D064 /* TYHNavigationController.m in Sources */,
 				EE4203E11FFE15420009D064 /* TYHScanViewController.m in Sources */,
+				EEFF02DB2360340A008B1240 /* NTESWorkflowTitleViewController.m in Sources */,
 				EE4202341FFE15400009D064 /* RAPlaceModel.m in Sources */,
 				EE4202DD1FFE15410009D064 /* TYHBasePersonController.m in Sources */,
 				EE2E005A207DF3760062AB74 /* qcsClassDetailInsideXZTDetailController.m in Sources */,
@@ -8364,17 +8431,18 @@
 				EE05AF5C22A10D17001AC255 /* SDCollectionViewCell.m in Sources */,
 				EEB1ECA92099A21E0005DAEB /* qcsStudyAnalyticsSearcuClassController.m in Sources */,
 				EE4201A21FFE15400009D064 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */,
-				EEB1014222278FA10069D19E /* TYHIMHandler.m in Sources */,
 				EEA3368221BA6BE4000B9759 /* UUProgressHUD.m in Sources */,
 				EE42036B1FFE15410009D064 /* CarDetailModel.m in Sources */,
 				EE3FFC952079F8D3004CD2A9 /* QCSMainModel.m in Sources */,
 				EE4202931FFE15400009D064 /* TYHPaiViewController.m in Sources */,
 				EE4201EB1FFE15400009D064 /* WHApplicationModel.m in Sources */,
+				EE11679E2361362800C95134 /* NTESWorkflowViewCell.m in Sources */,
 				EE4202DF1FFE15410009D064 /* TYHChoosedPersonController.m in Sources */,
 				EE4203651FFE15410009D064 /* TYHNewAPPViewController.m in Sources */,
 				61839A9B1BF9B60400702DF0 /* NTESFPSLabel.m in Sources */,
 				EE4202461FFE15400009D064 /* MRADetailBottomCell.m in Sources */,
 				EE00A18E21C2703700923E57 /* ZXCollectionCell.m in Sources */,
+				EEFF02E123603CB3008B1240 /* NTESWorkflowModel.m in Sources */,
 				EEDAC02621BA4EAC001DC393 /* TYHNoticeIconFontDictionary.m in Sources */,
 				EE05AF5F22A10D17001AC255 /* TAAnimatedDotView.m in Sources */,
 				EE42020A1FFE15400009D064 /* WHOutResignCell.m in Sources */,
@@ -8393,6 +8461,7 @@
 				834382781EFCB9D30052254A /* NTESCustomSysNotificationViewController.m in Sources */,
 				EE4201BB1FFE15400009D064 /* HWDetailModel.m in Sources */,
 				EE42016C1FFE15400009D064 /* MASLayoutConstraint.m in Sources */,
+				EEFF02CF236033E5008B1240 /* TYHLoginAjaxHandler.m in Sources */,
 				EE42030B1FFE15410009D064 /* SingleManager.m in Sources */,
 				EE42034A1FFE15410009D064 /* PUserInfoType2Cell.m in Sources */,
 				EE4202E81FFE15410009D064 /* TYHReadInfo2ViewController.m in Sources */,
@@ -8471,6 +8540,7 @@
 				EE42036C1FFE15410009D064 /* CarStatusModel.m in Sources */,
 				61E471131B7D963E00F4A1BF /* NTESGroupedContacts.m in Sources */,
 				EE42032C1FFE15410009D064 /* PAddServerRecordCell.m in Sources */,
+				EEFF02DE23603480008B1240 /* NTESNetWorkflowViewController.m in Sources */,
 				EE42032A1FFE15410009D064 /* ProjectMainModel.m in Sources */,
 				61E4718D1B7D96AA00F4A1BF /* NTESDemoConfig.m in Sources */,
 				EE4203941FFE15410009D064 /* ClassPaperViewController.m in Sources */,
@@ -8478,7 +8548,6 @@
 				EE4203281FFE15410009D064 /* PVisitRecordDetailController.m in Sources */,
 				EE4203D51FFE15420009D064 /* YMReplyInputView.m in Sources */,
 				6173AED81BAAC8F500854D49 /* NTESSignSettingViewController.m in Sources */,
-				EE4203DA1FFE15420009D064 /* TYHLoginInfoModel.m in Sources */,
 				EE42028D1FFE15400009D064 /* TYHChoosePlaceController.m in Sources */,
 				EE4202671FFE15400009D064 /* TYHKeYanController.m in Sources */,
 				EE4201951FFE15400009D064 /* WKWebViewJavascriptBridge.m in Sources */,
@@ -8598,7 +8667,6 @@
 				EE4203831FFE15410009D064 /* TYHCarButton.m in Sources */,
 				61E471391B7D963E00F4A1BF /* NTESSearchMessageContentCell.m in Sources */,
 				EE4202A81FFE15400009D064 /* AssetListController.m in Sources */,
-				EE4203D91FFE15420009D064 /* TYHLoginAjaxHandler.m in Sources */,
 				EE42038F1FFE15410009D064 /* TYHAddFriendViewController.m in Sources */,
 				6173AEC91BAAC6CB00854D49 /* NTESGenderSettingViewController.m in Sources */,
 				EE4203B91FFE15410009D064 /* UILabel+Corner.m in Sources */,
@@ -8670,6 +8738,7 @@
 				EE4203191FFE15410009D064 /* PAddVisitRecordController.m in Sources */,
 				EE4203A11FFE15410009D064 /* SchoolMatesModel.m in Sources */,
 				EE4201621FFE15400009D064 /* HPTextViewInternal.m in Sources */,
+				EEFF02D1236033E5008B1240 /* TYHIMHandler.m in Sources */,
 				EE00A18421C2703700923E57 /* qcsHomeworkSelectCell.m in Sources */,
 				EE4203DF1FFE15420009D064 /* TYHFindPasswordController.m in Sources */,
 				8343827C1EFCB9D30052254A /* NTESSystemNotificationViewController.m in Sources */,
@@ -8883,6 +8952,7 @@
 				EE42024C1FFE15400009D064 /* MRFeedBackScoreCell.m in Sources */,
 				EE4202431FFE15400009D064 /* RMPaiHeaderView.m in Sources */,
 				EE4202CB1FFE15410009D064 /* TakeCourseMineViewController.m in Sources */,
+				EEFF02D0236033E5008B1240 /* TYHLoginInfoModel.m in Sources */,
 				EEA3367C21BA6BE4000B9759 /* SSChatVoiceCell.m in Sources */,
 				EEA3371621BA6BE5000B9759 /* SSImageGroupData.m in Sources */,
 				EE42029E1FFE15400009D064 /* AssetChooseTypeController.m in Sources */,
@@ -9080,6 +9150,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "智微校XLaunch";
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_ENTITLEMENTS = "智微校.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Unitever Technology Co., Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Unitever Technology Co., Ltd.";
@@ -9140,6 +9211,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "智微校XLaunch";
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_ENTITLEMENTS = "智微校.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Unitever Technology Co., Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Beijing Unitever Technology Co., Ltd.";

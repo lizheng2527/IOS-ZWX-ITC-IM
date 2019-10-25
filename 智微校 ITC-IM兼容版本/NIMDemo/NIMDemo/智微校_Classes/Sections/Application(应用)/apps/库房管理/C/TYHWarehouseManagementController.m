@@ -62,6 +62,7 @@ static  NSString * headerCell =  @"headerCell";
     // Do any additional setup after loading the view.
     [self setUpCollectionView];
     [self createBarItem];
+    
     [self.view addSubview:self.carButton];
 }
 

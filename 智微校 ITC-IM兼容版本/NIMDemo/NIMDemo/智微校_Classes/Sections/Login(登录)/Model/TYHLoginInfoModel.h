@@ -44,6 +44,7 @@
 
 @property(nonatomic,copy)NSString *codes;
 @property(nonatomic,copy)NSString *autograph;
+@property(nonatomic,copy)NSString *sys_token;
 
 @end
 

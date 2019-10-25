@@ -437,7 +437,7 @@ NTES_USE_CLEAR_BAR
     [[NSUserDefaults standardUserDefaults]setValue:model.autograph forKey:USER_DEFAULT_SIGNATURE ];
     [[NSUserDefaults standardUserDefaults]setValue:model.email forKey:USER_DEFAULT_EMAIL];
     [[NSUserDefaults standardUserDefaults]setValue:model.headPortraitUrl forKey:USER_DEFAULT_HeadPortraitUrl];
-    
+     [[NSUserDefaults standardUserDefaults]setValue:model.sys_token forKey:USER_DEFAULT_SYS_TOKEN];
     [[NSUserDefaults standardUserDefaults]synchronize];
     
     NSString * headerImage =  [NSString stringWithFormat:@"%@%@",BaseURL,model.headPortraitUrl];

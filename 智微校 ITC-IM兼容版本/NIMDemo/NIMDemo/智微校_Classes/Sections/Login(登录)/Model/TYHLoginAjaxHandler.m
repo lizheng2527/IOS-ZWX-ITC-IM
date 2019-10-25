@@ -15,6 +15,8 @@
 
 
 #define OrganizationJsonURL @"/bd/mobile/mobileWelcome!getOrganizationJson.action"
+//#define OrganizationJsonURL @"/bd/organization/getOrganizationJson"
+
 #define UserInfoJson @"/bd/mobile/mobileWelcome!getUserWithLoginNameAndPassword.action"
 #define submitLoginStatus @"/bd/loginRecord/saveOrUpdate"
 #define submitUserInfo @"/bd/mobile/mobileWelcome!saveUserDetail.action"

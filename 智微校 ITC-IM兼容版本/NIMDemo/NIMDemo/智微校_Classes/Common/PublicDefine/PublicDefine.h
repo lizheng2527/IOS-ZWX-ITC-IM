@@ -159,6 +159,8 @@ cancelButtonTitle:@"确定"  otherButtonTitles:nil]; [alert show];}
 
 #define USER_DEFAULT_EMAIL @"USER_DEFAULT_EMAIL"
 
+#define USER_DEFAULT_SYS_TOKEN @"USER_DEFAULT_SYS_TOKEN"
+
 #define USER_DEFAULT_SEX @"USER_DEFAULT_SEX"
 
 #define USER_DEFAULT_SIGNATURE @"USER_DEFAULT_SIGNATURE"

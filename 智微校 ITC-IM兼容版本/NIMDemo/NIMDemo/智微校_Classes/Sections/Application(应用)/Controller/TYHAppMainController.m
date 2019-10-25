@@ -35,7 +35,7 @@
 #import "TYHAppLoadSharedInstance.h"
 
 #import "NTESLoginViewController.h"
-
+#import "NTESWorkflowViewController.h"
 
 #import "CAEvaluateController.h"
 
@@ -335,6 +335,20 @@
         HomeWorkViewController * receptVC = [[HomeWorkViewController alloc] initWithVoipAccount:[[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_USERID] userName:[[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_LOGINNAME] headIconImage:[UIImage new] teacherOrUser:NO];
         
         [self.navigationController pushViewController:receptVC animated:YES];
+    }
+//    工作流相关
+//    else if([code isEqualToString:@"jsqj"]||[code isEqualToString:@"dcgl1"] || [code isEqualToString:@"hysyy" ]){
+//
+//        NTESWorkflowViewController * workflowVc = [[NTESWorkflowViewController alloc] init];
+//        workflowVc.code = code;
+//        [self.navigationController pushViewController:workflowVc animated:YES];
+//    }
+    else if([code hasPrefix:@"workflow-"]){
+       
+        NTESWorkflowViewController * workflowVc = [[NTESWorkflowViewController alloc] init];
+//        workflowVc.code = [tempCode copy];
+        workflowVc.code = [code stringByReplacingOccurrencesOfString:@"workflow-" withString:@""];
+        [self.navigationController pushViewController:workflowVc animated:YES];
     }
     
     

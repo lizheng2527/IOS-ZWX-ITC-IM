@@ -157,6 +157,7 @@
         userModel.strId = [NSString stringWithFormat:@"%@",[userDic objectForKey:@"id"]];
         userModel.headPortraitUrl = [NSString stringWithFormat:@"%@",[userDic objectForKey:@"headPortraitUrl"]];
         userModel.accId = [NSString stringWithFormat:@"%@",[userDic objectForKey:@"accId"]];
+        userModel.parentId = [NSString stringWithFormat:@"%@",model.contactId];
         [model.userList addObject:userModel];
         [self.dataSource addObject:userModel];
         

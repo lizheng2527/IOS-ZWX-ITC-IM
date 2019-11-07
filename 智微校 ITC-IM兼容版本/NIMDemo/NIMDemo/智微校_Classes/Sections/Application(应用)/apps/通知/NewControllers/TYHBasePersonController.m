@@ -16,6 +16,7 @@
 #import <UIView+Toast.h>
 #import "TYHContactDetailCell.h"
 #import "TYHNewSendViewController.h"
+#import "NTESNoticeSelPerTableViewCell.h"
 
 
 #define HeadBtnWidth 55
@@ -35,7 +36,9 @@
 @property (nonatomic, strong) NSMutableArray * resultsArray;
 
 @property (nonatomic, strong) NSMutableArray * resultsModelArray;
-
+@property (nonatomic, strong) NSMutableArray * tempArr;
+@property (nonatomic, strong) NSMutableArray * tempSelectGroupArray;
+@property (nonatomic, strong) NSMutableArray * tempSelectGroupModelArray;
 @property (nonatomic, strong) UISearchBar *mySearchBar;
 @property (nonatomic, strong) UISearchDisplayController *mySearchDisplayController;
 
@@ -52,6 +55,22 @@
         self.tempArray = [NSMutableArray  arrayWithArray:_modelArray];
     }
     return _tempArray;
+}
+
+- (NSMutableArray *)tempSelectGroupArray {
+    
+    if (_tempSelectGroupArray == nil) {
+        self.tempSelectGroupArray = [[NSMutableArray  alloc] init];
+    }
+    return _tempSelectGroupArray;
+}
+
+- (NSMutableArray *)tempSelectGroupModelArray {
+    
+    if (_tempSelectGroupModelArray == nil) {
+        self.tempSelectGroupModelArray = [[NSMutableArray  alloc] init];
+    }
+    return _tempSelectGroupModelArray;
 }
 
 - (NSArray *)resultsData {
@@ -384,7 +403,6 @@
                     cell.selecImage.image = [UIImage imageNamed:@"select_account_list_checked"];
                 }
                 else{
-                    
                     cell.selecImage.image = [UIImage imageNamed:@"select_account_list_unchecked"];
                 }
             }
@@ -395,16 +413,30 @@
         
     }else {
         
-        
         NSInteger indentationLevel = 0;
         if ([[self.groupArray objectAtIndex:indexPath.row] isKindOfClass:[ContactModel class]]) {
-            static NSString *iden = @"TYHContactCell";
-            TYHContactCell *cell = [tableView dequeueReusableCellWithIdentifier:iden];
+            static NSString *iden = @"NTESNoticeSelPerTableViewCell";
+            NTESNoticeSelPerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:iden];
             if (!cell) {
-                cell = [[NSBundle mainBundle]loadNibNamed:@"TYHContactCell" owner:self options:nil].firstObject;
+                cell = [[NSBundle mainBundle]loadNibNamed:@"NTESNoticeSelPerTableViewCell" owner:self options:nil].firstObject;
                 indentationLevel = cell.indentationLevel;
             }
+            cell.selectImage.frame = CGRectMake(self.view.frame.size.width - 50, 15.0f, 22.25f, 22.25f);
+            [cell.selectImage setUserInteractionEnabled:YES];
+            [cell.selectImage setTag:indexPath.row+10000];
+            
+            
+            UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickImage:)];
+            [cell.selectImage addGestureRecognizer:singleTap];
+            
+            
             ContactModel *model = [self.groupArray objectAtIndex:indexPath.row];
+            if ([self.tempSelectGroupArray containsObject:model.contactId]) {
+                cell.selectImage.image = [UIImage imageNamed:@"select_account_list_checked"];
+            }
+            else{
+                cell.selectImage.image = [UIImage imageNamed:@"select_account_list_unchecked"];
+            }
             if (isAlreadyInserted) {
                 cell.icon.image = [UIImage imageNamed:@"展开"];
             } else{
@@ -437,13 +469,33 @@
                 cell.selecImage.image = [UIImage imageNamed:@"select_account_list_checked"];
             }
             else{
-                
                 cell.selecImage.image = [UIImage imageNamed:@"select_account_list_unchecked"];
             }
             return cell;
         }
     }
     return nil;
+}
+
+-(void)onClickImage : (UITapGestureRecognizer *)tap{
+    
+    UIImageView * img = (UIImageView *)tap.view;
+    NSInteger i = img.tag;
+    ContactModel *model = [self.groupArray objectAtIndex:i-10000];
+    if (self.tempSelectGroupArray && ![self.tempSelectGroupArray containsObject:model.contactId]) {
+        [self getModelChild:model];
+        if (model.parentId && ![@"0" isEqualToString:model.parentId]) {
+             [self addParentAll:model.parentId strId:model.contactId];
+        }
+    }else{
+        [self removeModelChild:model];
+        [self removeParentId:model.parentId];
+    }
+    self.setArray = [NSSet setWithArray:self.selectedArray];
+    self.modelArray = self.tempArray;
+    [self.groupTableView reloadData];
+    [self setRightItem];
+    NSLog(@"当前x选择了%lu",(unsigned long)[_selectedArray count]);
 }
 
 - (void)cellSelectBtnClickeGroups:(UITapGestureRecognizer *)tap {
@@ -522,7 +574,6 @@
     
     CGPoint point = [tap locationInView:_groupTableView];
     NSIndexPath * indexPath = [_groupTableView indexPathForRowAtPoint:point];
-    
     UIImageView * selectimage = nil;
     for (UIView * view in tap.view.subviews) {
         if (view.tag >=indexPath.row+1000) {
@@ -536,7 +587,7 @@
         UserModel *model = [self.groupArray objectAtIndex:indexPath.row];
         NSString *voipSrting = model.strId;
         
-        NSLog(@"model.voipAccount == %@",model.strId);
+       
         if ( [_showTableView containsObject:model.strId]) {
             selectimage.image = [UIImage imageNamed:@"select_account_list_checked"];
             [self.view makeToast:@"" duration:0.8 position:nil];
@@ -544,10 +595,14 @@
         else{
             
             if ([_selectedArray containsObject:voipSrting] ) {
+                 NSLog(@"model.voipAccount == %@ 需要取消全选",model.strId);
                 selectimage.image = [UIImage imageNamed:@"select_account_list_unchecked"];
                 [_selectedArray removeObject:voipSrting];
-                
-                
+                if (model.parentId ) {
+                    if (![@"0" isEqualToString:model.parentId]) {
+                         [self removeParentId:model.parentId];
+                    }
+                }
                 if (self.tempArray.count != 0) {
                     
                     
@@ -565,13 +620,13 @@
                 self.setArray = [NSSet setWithArray:self.selectedArray];
             }
             else{
-                
+                NSLog(@"model.voipAccount == %@ 需要增加判断全选",model.strId);
                 selectimage.image = [UIImage imageNamed:@"select_account_list_checked"];
                 [_selectedArray addObject:voipSrting];
-                
                 [self.tempArray addObject:model];
-                
-                
+                if (model.parentId && ![@"0" isEqualToString:model.parentId]) {
+                    [self addParentAll:model.parentId strId:model.strId];
+                }
                 self.setArray = [NSSet setWithArray:self.selectedArray];
                 
                 [[NSUserDefaults standardUserDefaults] setValue:voipSrting forKey:USER_DEFAULT_ID];
@@ -585,9 +640,8 @@
         
         [self setRightItem];
     }
-    
-    
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
@@ -623,16 +677,14 @@
             }
         }
         
-        TYHContactCell *cell = (TYHContactCell *)[tableView cellForRowAtIndexPath:indexPath];
+        NTESNoticeSelPerTableViewCell *cell = (NTESNoticeSelPerTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
         ContactModel *model = [self.groupArray objectAtIndex:indexPath.row];
-        
-        
         if ([[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:[InviteJoinListViewCell class]]) {
             return;
-        }
-        else {
-            if (model.childs && model.childs.count > 0) {
-               
+        }else {
+            
+            if (model.childs && model.childs.count > 0) {// 下个层级仍然存在父级
+                NSLog(@"下个层级仍然存在父级");
                 for (ContactModel *contactModel in model.childs) {
                     NSInteger index = [self.groupArray indexOfObjectIdenticalTo:contactModel];
                     isAlreadyInserted=(index>0 && index!=NSIntegerMax);
@@ -653,8 +705,9 @@
                     [tableView insertRowsAtIndexPaths:arCells withRowAnimation:UITableViewRowAnimationNone];
                 }
             }
-            if (model.userList && model.userList.count) {
+            if (model.userList && model.userList.count) {//下个层级无父级
 //                BOOL isAlreadyInserted = NO;
+                NSLog(@"下个层级无父级");
                 for (UserModel *userModel in model.userList) {
                     NSInteger index = [self.groupArray indexOfObjectIdenticalTo:userModel];
                     isAlreadyInserted=(index>0 && index!=NSIntegerMax);
@@ -724,6 +777,135 @@
     }
 }
 
+#pragma mark - 全选使用的函数
+
+- (void) getModelChild:(ContactModel *) model{//递归添加子层级
+    
+    if (self.tempSelectGroupArray && ![self.tempSelectGroupArray containsObject:model.contactId]) {
+        [self.tempSelectGroupArray addObject:model.contactId];
+        [self.tempSelectGroupModelArray addObject:model];
+    }
+    if (model.userList && [model.userList count] > 0) {
+        for (int i=0; i<[model.userList count]; i++){
+            UserModel *userModel = model.userList[i] ;
+            if (userModel && userModel.strId) {
+                if (![_selectedArray containsObject:userModel.strId]) {
+                    [_selectedArray addObject:userModel.strId];
+                    [self.tempArray addObject:userModel];
+                }
+            }
+        }
+    }
+    for (int i=0; i<[model.childs count]; i++){
+        if (model.childs[i] != nil && [model.childs count] > 0) {
+            [self getModelChild:model.childs[i]];
+        }
+    }
+}
+
+- (void) removeModelChild:(ContactModel *) model{//递归删除
+    
+    if (self.tempSelectGroupArray && [self.tempSelectGroupArray containsObject:model.contactId]) {
+        [self.tempSelectGroupArray removeObject:model.contactId];
+        [self.tempSelectGroupModelArray removeObject:model];
+    }
+    if (model.userList && [model.userList count] > 0) {
+        for (int i=0; i<[model.userList count]; i++){
+            UserModel *userModel = model.userList[i] ;
+            if (userModel && userModel.strId) {
+                if ([_selectedArray containsObject:userModel.strId]) {
+                    [_selectedArray removeObject:userModel.strId];
+                    [self.tempArray removeObject:userModel];
+                }
+            }
+        }
+    }
+    for (int i=0; i<[model.childs count]; i++){
+        if (model.childs[i] != nil && [model.childs count] > 0) {
+            [self removeModelChild:model.childs[i]];
+        }
+    }
+}
+
+//通过子节点删除父级节点
+-(void) removeParentId:(NSString *) parentId{
+    if ([self.tempSelectGroupArray containsObject:parentId]) {
+        [self.tempSelectGroupArray removeObject:parentId];
+        int index = -1;
+        for (int i=0; i<[self.tempSelectGroupModelArray count]; i++)
+        {
+            ContactModel *model =self.tempSelectGroupModelArray[i];
+            if ([model.contactId isEqualToString:parentId]) {
+                index = i;
+            }
+        }
+        if (index != -1) {
+            ContactModel *m =self.tempSelectGroupModelArray[index];
+            [self.tempSelectGroupModelArray removeObjectAtIndex:index];
+            if (m.parentId && ![@"0" isEqualToString:m.parentId]) {
+                [self removeParentId:m.parentId];
+            }
+        }
+    }
+}
+//通过选择子节点l动态添加父节点
+-(void) addParentAll:(NSString *) parentId strId: (NSString *) strId{
+    int index = -1;
+    BOOL isAll = YES;
+    for (int i = 0; i < [self.groupArray count]; i++) {
+        if([self.groupArray[i] isKindOfClass:[ContactModel class]]){
+            ContactModel *model = self.groupArray[i];
+            if ( model.contactId && [model.contactId isEqualToString:parentId]) {
+                if (model.childs && [model.childs count] > 0) {
+                    for (int j = 0; j < [model.childs count]; j ++ ) {
+                        if (model.childs && [model.childs[j] isKindOfClass:[ContactModel class]]) {
+                            ContactModel *m = model.childs[j] ;
+                            if(m.userList && [m.userList count] > 0){
+                                for (int z = 0; z < [m.userList count]; z ++) {
+                                    UserModel  *u = m.userList[z];
+                                    if (![self.selectedArray containsObject:u.strId]) {
+                                        isAll = NO;
+                                        return;
+                                    }
+                                }
+                            }
+                            if(m.childs && [m.childs count] > 0){
+                                for (int z = 0; z < [m.childs count]; z ++) {
+                                    ContactModel  *u = m.childs[z];
+                                    if (![self.tempSelectGroupArray containsObject:u.contactId]) {
+                                        isAll = NO;
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (model.userList &&[model.userList count] > 0) {
+                    for (int i = 0; i < [model.userList count]; i ++ ) {
+                        UserModel *u = model.userList[i];
+                        if (![self.selectedArray containsObject:u.strId]) {
+                            isAll = NO;
+                            return;
+                        }
+                    }
+                }
+                index = i;
+                break;
+            }
+        }
+    }
+    
+    
+    if (index != -1 && isAll) {
+        [self.tempSelectGroupArray addObject:parentId];
+        [self.tempSelectGroupModelArray addObject:self.groupArray[index]];
+        ContactModel *m = self.groupArray[index];
+        if (m.parentId && ![@"0" isEqualToString:m.parentId]) {
+            [self addParentAll:m.parentId strId:m.contactId];
+        }
+    }
+}
 #pragma mark - 返回行缩进 有三个方法一起配合使用才生效
 -(NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == _groupTableView) {

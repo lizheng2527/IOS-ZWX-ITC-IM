@@ -1200,6 +1200,8 @@
 		EEDAC02021BA3D2E001DC393 /* TBCityIconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDAC01921BA3D2E001DC393 /* TBCityIconFont.m */; };
 		EEDAC02321BA4878001DC393 /* TYHNoticeIconFontDic.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDAC02221BA4878001DC393 /* TYHNoticeIconFontDic.m */; };
 		EEDAC02621BA4EAC001DC393 /* TYHNoticeIconFontDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDAC02521BA4EAC001DC393 /* TYHNoticeIconFontDictionary.m */; };
+		EEF2A373236BE28C003B848D /* NTESNoticeSelPerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF2A371236BE28C003B848D /* NTESNoticeSelPerTableViewCell.m */; };
+		EEF2A374236BE28C003B848D /* NTESNoticeSelPerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF2A372236BE28C003B848D /* NTESNoticeSelPerTableViewCell.xib */; };
 		EEFF02CF236033E5008B1240 /* TYHLoginAjaxHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFF02CB236033E5008B1240 /* TYHLoginAjaxHandler.m */; };
 		EEFF02D0236033E5008B1240 /* TYHLoginInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFF02CC236033E5008B1240 /* TYHLoginInfoModel.m */; };
 		EEFF02D1236033E5008B1240 /* TYHIMHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = EEFF02CD236033E5008B1240 /* TYHIMHandler.m */; };
@@ -3197,6 +3199,9 @@
 		EEDAC02421BA4EAC001DC393 /* TYHNoticeIconFontDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYHNoticeIconFontDictionary.h; sourceTree = "<group>"; };
 		EEDAC02521BA4EAC001DC393 /* TYHNoticeIconFontDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYHNoticeIconFontDictionary.m; sourceTree = "<group>"; };
 		EEF144E120F37793006DA456 /* 智微校.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "智微校.entitlements"; sourceTree = "<group>"; };
+		EEF2A370236BE28C003B848D /* NTESNoticeSelPerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESNoticeSelPerTableViewCell.h; sourceTree = "<group>"; };
+		EEF2A371236BE28C003B848D /* NTESNoticeSelPerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTESNoticeSelPerTableViewCell.m; sourceTree = "<group>"; };
+		EEF2A372236BE28C003B848D /* NTESNoticeSelPerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NTESNoticeSelPerTableViewCell.xib; sourceTree = "<group>"; };
 		EEFF02C9236033E5008B1240 /* TYHLoginInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYHLoginInfoModel.h; sourceTree = "<group>"; };
 		EEFF02CA236033E5008B1240 /* TYHLoginAjaxHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYHLoginAjaxHandler.h; sourceTree = "<group>"; };
 		EEFF02CB236033E5008B1240 /* TYHLoginAjaxHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYHLoginAjaxHandler.m; sourceTree = "<group>"; };
@@ -6812,6 +6817,7 @@
 		EE42FF111FFE153E0009D064 /* 通知 */ = {
 			isa = PBXGroup;
 			children = (
+				EEF2A36F236BE25C003B848D /* cell */,
 				EE42FF121FFE153E0009D064 /* Controller */,
 				EE42FF1C1FFE153E0009D064 /* Model */,
 				EE42FF211FFE153E0009D064 /* NewCategorys */,
@@ -7679,6 +7685,16 @@
 			path = LLSwitch;
 			sourceTree = "<group>";
 		};
+		EEF2A36F236BE25C003B848D /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				EEF2A370236BE28C003B848D /* NTESNoticeSelPerTableViewCell.h */,
+				EEF2A371236BE28C003B848D /* NTESNoticeSelPerTableViewCell.m */,
+				EEF2A372236BE28C003B848D /* NTESNoticeSelPerTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		EEFF02BE235FE3BE008B1240 /* 工作流 */ = {
 			isa = PBXGroup;
 			children = (
@@ -7852,6 +7868,7 @@
 				EE42020B1FFE15400009D064 /* WHOutResignCell.xib in Resources */,
 				EE4202701FFE15400009D064 /* TYHAttendanceController.xib in Resources */,
 				EE00A18221C2703700923E57 /* qcsHomeworkChooseTypeController.xib in Resources */,
+				EEF2A374236BE28C003B848D /* NTESNoticeSelPerTableViewCell.xib in Resources */,
 				EE42028C1FFE15400009D064 /* TYHCheckViewController.xib in Resources */,
 				EE2E0046207BA70E0062AB74 /* qcsClassStasticInsideDTBCell.xib in Resources */,
 				EE4203391FFE15410009D064 /* ProjectMainCell.xib in Resources */,
@@ -8521,6 +8538,7 @@
 				6118F5A61C5A0FC1009AF01E /* UINavigationBar+Swizzling.m in Sources */,
 				EE42036A1FFE15410009D064 /* CarDataModel.m in Sources */,
 				EE4201F71FFE15400009D064 /* WHApplicationItemCell.m in Sources */,
+				EEF2A373236BE28C003B848D /* NTESNoticeSelPerTableViewCell.m in Sources */,
 				EE4202EC1FFE15410009D064 /* RecentModel.m in Sources */,
 				EE4201A51FFE15400009D064 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */,
 				834382761EFCB9D30052254A /* NTESCustomNotificationDB.m in Sources */,

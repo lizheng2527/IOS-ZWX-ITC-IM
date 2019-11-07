@@ -390,7 +390,6 @@
                 
                 [hahArray addObject:model.strId];
             }
-            
             self.tempArray = hahArray;
         };
         

@@ -11,5 +11,5 @@
 @interface TYHContactCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-
+@property (weak, nonatomic) IBOutlet UIImageView *selectImage;
 @end

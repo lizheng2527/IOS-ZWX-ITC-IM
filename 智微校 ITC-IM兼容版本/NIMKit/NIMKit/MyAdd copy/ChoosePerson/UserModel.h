@@ -27,6 +27,7 @@
 @property (strong, nonatomic) NSString *imageName;
 @property(strong,nonatomic)NSString *headPortraitUrl;
 @property(nonatomic,copy)NSString *accId;
+@property(nonatomic,copy)NSString *parentId;
 
 @property(nonatomic,assign)BOOL isAlreadyInserted;
 @end

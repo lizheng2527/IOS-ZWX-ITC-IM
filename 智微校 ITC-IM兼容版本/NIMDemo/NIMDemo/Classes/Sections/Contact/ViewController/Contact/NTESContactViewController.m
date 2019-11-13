@@ -71,7 +71,7 @@ NIMEventSubscribeManagerDelegate> {
     [super viewDidLoad];
     
     NSString *kindString = [[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_KIND];
-    if ([kindString isEqualToString:@"1"] || [kindString isEqualToString:@"2"] || [kindString isEqualToString:@"4"]) {
+    if (![kindString isEqualToString:@"2"]) {
         isTeacherOrAdmin = NO;
     }
     else isTeacherOrAdmin = YES;
@@ -112,7 +112,6 @@ NIMEventSubscribeManagerDelegate> {
     NSString *contactCellUtilUid    = @"uid";
     NSString *contactCellUtilSelectorName = @"selName";
 //原始数据
-    
     NSInteger systemCount = [[[NIMSDK sharedSDK] systemNotificationManager] allUnreadCount];
     NSMutableArray *utils =
             [@[
@@ -149,7 +148,7 @@ NIMEventSubscribeManagerDelegate> {
 //                },
               ] mutableCopy];
     
-    if ([[[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_KIND] isEqualToString:@"0"]) {
+    if ([[[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_KIND] isEqualToString:@"2"]) {
         [utils addObject:@{
                            contactCellUtilIcon:@"icon_School_70",
                            contactCellUtilTitle:@"组织机构",
@@ -161,21 +160,28 @@ NIMEventSubscribeManagerDelegate> {
                            contactCellUtilVC:@"TYHContacterListController",
                            }];
     }
-    else if([[[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_KIND] isEqualToString:@"1"] ||  [[[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_KIND] isEqualToString:@"2"])
-    {
+    else{
         [utils addObject:@{
-                           contactCellUtilIcon:@"icon_School_70",
-                           contactCellUtilTitle:@"班级",
-                           contactCellUtilVC:@"TYHContacterListController",
-                           }];
+                                                      contactCellUtilIcon:@"icon_School_70",
+                                                      contactCellUtilTitle:@"班级",
+                                                      contactCellUtilVC:@"TYHContacterListController",
+                                                      }];
     }
-    else  if ([[[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_KIND] isEqualToString:@"3"] || [[[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_KIND] isEqualToString:@"4"]) {
-        [utils addObject:@{
-                           contactCellUtilIcon:@"icon_School_70",
-                           contactCellUtilTitle:@"组织机构",
-                           contactCellUtilVC:@"TYHContacterListController",
-                           }];
-    }
+//    else if([[[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_KIND] isEqualToString:@"1"] ||  [[[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_KIND] isEqualToString:@"2"])
+//    {
+//        [utils addObject:@{
+//                           contactCellUtilIcon:@"icon_School_70",
+//                           contactCellUtilTitle:@"班级",
+//                           contactCellUtilVC:@"TYHContacterListController",
+//                           }];
+//    }
+//    else  if ([[[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_KIND] isEqualToString:@"3"] || [[[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_KIND] isEqualToString:@"4"]) {
+//        [utils addObject:@{
+//                           contactCellUtilIcon:@"icon_School_70",
+//                           contactCellUtilTitle:@"组织机构",
+//                           contactCellUtilVC:@"TYHContacterListController",
+//                           }];
+//    }
     
     self.navigationItem.title = @"通讯录";
     [self setUpNavItem];
@@ -305,10 +311,12 @@ NIMEventSubscribeManagerDelegate> {
         if ([vc isKindOfClass:[TYHContacterListController class]]) {
             vc.title = @"通讯录";
             if (isTeacherOrAdmin) {
-                vc = [[TYHContacterListController alloc]initWithType:0];
+                if (indexPath.row != 5) vc = [[TYHContacterListController alloc]initWithType:0];
             }
-            else vc = [[TYHContacterListController alloc]initWithType:1];
-            if (indexPath.row == 6) {
+            else {
+               vc = [[TYHContacterListController alloc]initWithType:1];
+            }
+            if (indexPath.row == 5) {
                 vc = [[TYHContacterListController alloc]initWithType:1];
             }
         }

@@ -67,7 +67,7 @@
 }
 
 //获取当天考勤记录
--(void)getAttendanceActionListWithStatus:(void (^)(BOOL ,NSMutableArray *))status failure:(void (^)(NSError *error))failure
+-(void)getAttendanceActionListWithStatus:(void (^)(BOOL ,NSMutableArray *,NSString *))status failure:(void (^)(NSError *error))failure
 {
     NSDictionary *dic = @{@"sys_auto_authenticate":@"true",@"sys_username":[NSString stringWithFormat:@"%@",userName],@"sys_password":password,@"userId":userID};
     NSString *requestUrl = [NSString stringWithFormat:@"%@%@",k_V3ServerURL,attendataceList];
@@ -79,6 +79,7 @@
             startModel.startTime = model.startTime;
             startModel.startAddress = model.startAddress;
             startModel.typeString = @"上班考勤";
+            startModel.addressName = model.addressName;
             [blockArray addObject:startModel];
         }
         else
@@ -87,7 +88,8 @@
                 AttendanceListModel *tmpModel = [AttendanceListModel new];
                 tmpModel.typeString = @"上班考勤";
                 tmpModel.startTime = @"上班未考勤";
-                tmpModel.startAddress = @"暂无";
+                tmpModel.startAddress = NSLocalizedString(@"APP_assets_nowNo", nil);
+                tmpModel.addressName = model.addressName;
                 [blockArray addObject:tmpModel];
             }
         }
@@ -96,14 +98,14 @@
             endModel.endTime = model.endTime;
             endModel.endAddress = model.endAddress;
             endModel.typeString = @"下班考勤";
+            endModel.addressName = model.addressName;
             [blockArray addObject:endModel];
         }
-        status(YES,blockArray);
+        status(YES,blockArray,model.addressName);
     } failure:^(NSError *error) {
-        status(NO,[NSMutableArray array]);
+        status(NO,[NSMutableArray array],@"");
     }];
 }
-
 //获取当天统计
 -(void)getAttendanceDateListWithDate:(NSString *)Date andStatus:(void (^)(BOOL ,NSMutableArray *))status failure:(void (^)(NSError *error))failure
 {

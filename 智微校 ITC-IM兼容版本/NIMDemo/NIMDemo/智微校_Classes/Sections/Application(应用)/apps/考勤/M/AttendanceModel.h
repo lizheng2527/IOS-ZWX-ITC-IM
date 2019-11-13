@@ -24,6 +24,8 @@
 @property(nonatomic,copy)NSString *workTime;
 @property(nonatomic,copy)NSString *name;
 
+@property(nonatomic,copy)NSString *addressName;
+
 @end
 
 @interface AttendanceRemarkModel : NSObject

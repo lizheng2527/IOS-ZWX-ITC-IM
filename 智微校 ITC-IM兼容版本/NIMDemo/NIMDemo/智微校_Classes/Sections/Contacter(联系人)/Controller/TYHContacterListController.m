@@ -188,7 +188,7 @@
     [SVProgressHUD showWithStatus:@"获取数据中..."];
     ContactModelListHelper *helper = [[ContactModelListHelper alloc]init];
     //1 class  0 school
-    if (_isClassOrSchool) {
+    if (!_isClassOrSchool) {
         [helper getContactCompletionWIthSchool:^(BOOL successful, NSMutableArray *schoolArray) {
             if (successful) {
                 _ListArray = [NSMutableArray arrayWithArray:schoolArray];

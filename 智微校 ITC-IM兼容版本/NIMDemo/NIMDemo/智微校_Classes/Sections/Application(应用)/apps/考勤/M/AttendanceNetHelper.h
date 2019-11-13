@@ -15,8 +15,9 @@
 //开始考勤上下班
 -(void)doAttendanceActionWithAddress:(NSString *)address andFlag:(NSString *)timeFlag status:(void (^)(BOOL ,AttendanceModel *))status failure:(void (^)(NSError *error))failure;
 
+
 //获取当天考勤记录
--(void)getAttendanceActionListWithStatus:(void (^)(BOOL ,NSMutableArray *))status failure:(void (^)(NSError *error))failure;
+-(void)getAttendanceActionListWithStatus:(void (^)(BOOL ,NSMutableArray *,NSString *))status failure:(void (^)(NSError *error))failure;
 
 //获取当天统计
 -(void)getAttendanceDateListWithDate:(NSString *)Date andStatus:(void (^)(BOOL ,NSMutableArray *))status failure:(void (^)(NSError *error))failure;

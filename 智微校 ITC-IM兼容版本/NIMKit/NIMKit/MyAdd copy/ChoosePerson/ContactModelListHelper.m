@@ -212,32 +212,14 @@
 {
     [self BaseData];
     
-//    NSDictionary *dic = @{@"sys_auto_authenticate":@"true",@"sys_username":[NSString stringWithFormat:@"%@%@%@",_userName,@"%2C",_organizationID],@"voipAccount":_voipAcount};
-//    NSString *requestURL = [NSString stringWithFormat:@"%@%@",_baseUrlString,@"/bd/organization/getClassTreeJsonForIOS"];
-//    
-//    [TYHHttpTool get:requestURL params:dic success:^(id json) {
-//        if (json) {
-//            NSMutableArray *mArray = [NSMutableArray array];
-//            mArray = [self handleContactList:json];
-//            completion(YES,mArray);
-//        }else{
-//            completion(NO,[NSMutableArray array]);
-//        }
-//        
-//    } failure:^(NSError *error) {
-//        
-//    }];
-    
-//    
     NSString *ContactUrl = [_baseUrlString stringByAppendingString:[NSString stringWithFormat:@"/bd/mobile/baseData!getStudentTreeIOSForMobile.action?sys_username=%@&sys_auto_authenticate=true&voipAccount=%@&sys_password=%@",_userName,_voipAcount,_password]];
-//    ContactUrl = [ContactUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager.responseSerializer setAcceptableContentTypes: [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/css", @"text/plain",nil]];
     [manager GET:ContactUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (responseObject) {
             NSMutableArray *friendArray = [NSMutableArray array];
             friendArray = [self handleContactList:responseObject];
-            
             completion(YES,friendArray);
         }else{
             completion(NO,nil);

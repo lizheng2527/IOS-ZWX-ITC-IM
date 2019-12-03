@@ -142,6 +142,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+//    if (!_StateArray || [_StateArray count] == 0) {
+//        return;
+//    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0) {
         SchoolMatesViewController *schoolmateView = [[SchoolMatesViewController alloc]initWithRecordModel:_StateArray[2]];

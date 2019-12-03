@@ -1592,29 +1592,29 @@ static int a;
         
         [self.navigationController pushViewController:newContact animated:YES];
         
-    }  else {
+    }  else {//此处是已经选择的人展示页面,由于加入全选,此处开放f的话要判断全选相关问题
         
-        TYHChoosedPersonController * chooseContact = [[TYHChoosedPersonController alloc] init];
-        
-        NSMutableArray * hahArray = [NSMutableArray array];
-        //modelArray   还差最近选择联系人的 选择
-        chooseContact.returnUserModelBlock = ^(NSMutableArray * modelArray){
-            
-            _modelArray = [NSMutableArray arrayWithArray:modelArray];
-            
-            for (UserModel * model in _modelArray) {
-                
-                [hahArray addObject:model.strId];
-            }
-            
-            self.tempArray = hahArray;
-        };
-        
-        chooseContact.tempArray = [self getTempArray];
-        
-        chooseContact.modelArray = self.modelArray;
-        
-        [self.navigationController pushViewController:chooseContact animated:YES];
+//        TYHChoosedPersonController * chooseContact = [[TYHChoosedPersonController alloc] init];
+//
+//        NSMutableArray * hahArray = [NSMutableArray array];
+//        //modelArray   还差最近选择联系人的 选择
+//        chooseContact.returnUserModelBlock = ^(NSMutableArray * modelArray){
+//
+//            _modelArray = [NSMutableArray arrayWithArray:modelArray];
+//
+//            for (UserModel * model in _modelArray) {
+//
+//                [hahArray addObject:model.strId];
+//            }
+//
+//            self.tempArray = hahArray;
+//        };
+//
+//        chooseContact.tempArray = [self getTempArray];
+//
+//        chooseContact.modelArray = self.modelArray;
+//
+//        [self.navigationController pushViewController:chooseContact animated:YES];
     }
     
 }
@@ -1631,6 +1631,9 @@ static int a;
     newContact.tempArray = [self getTempArray];
     newContact.modelArray = self.modelArray;
     
+    
+    newContact.tempSelectGroupArray = self.tempSelectGroupArray;
+    newContact.tempSelectGroupModelArray = self.tempSelectGroupModelArray;
     [self.navigationController pushViewController:newContact animated:YES];
     
 }

@@ -43,7 +43,7 @@
 #pragma mark - 获取首页信息
 -(void)getIndexJson:(void(^)(BOOL successful,TYHAssetManagerItemModel *tmpModel))status failure:(void(^)(NSError *error))failure
 {
-    NSDictionary *dic = @{@"sys_auto_authenticate":@"true",@"sys_username":[NSString stringWithFormat:@"%@",userName],@"sys_password":password};
+    NSDictionary *dic = @{@"sys_auto_authenticate":@"true",@"sys_username":[NSString stringWithFormat:@"%@",userName],@"sys_password":password,@"dataSourceName":[[NSUserDefaults standardUserDefaults]valueForKey:@"USER_DEFAULT_DataSourceName"]};
     
     NSString *requstURL = [NSString stringWithFormat:@"%@%@",k_V3ServerURL,IndexJson];
     [TYHHttpTool get:requstURL params:dic success:^(id json) {

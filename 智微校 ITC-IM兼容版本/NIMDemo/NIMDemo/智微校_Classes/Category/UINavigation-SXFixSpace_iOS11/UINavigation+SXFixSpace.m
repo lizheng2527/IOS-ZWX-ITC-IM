@@ -54,16 +54,16 @@ static BOOL sx_disableFixSpace = NO;
 -(void)sx_layoutSubviews{
     [self sx_layoutSubviews];
     
-    if (deviceVersion >= 11 && !sx_disableFixSpace) {//需要调节
-        self.layoutMargins = UIEdgeInsetsZero;
-        CGFloat space = sx_defaultFixSpace;
-        for (UIView *subview in self.subviews) {
-            if ([NSStringFromClass(subview.class) containsString:@"ContentView"]) {
-                subview.layoutMargins = UIEdgeInsetsMake(0, space, 0, space);//可修正iOS11之后的偏移
-                break;
-            }
-        }
-    }
+//    if (deviceVersion >= 11 && !sx_disableFixSpace) {//需要调节
+//        self.layoutMargins = UIEdgeInsetsZero;
+//        CGFloat space = sx_defaultFixSpace;
+//        for (UIView *subview in self.subviews) {
+//            if ([NSStringFromClass(subview.class) containsString:@"ContentView"]) {
+//                subview.layoutMargins = UIEdgeInsetsMake(0, space, 0, space);//可修正iOS11之后的偏移
+//                break;
+//            }
+//        }
+//    }
 }
 
 @end

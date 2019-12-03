@@ -395,6 +395,9 @@
         
         teachVc.chooseArray = self.seletedArray;
         teachVc.modelArray = self.modelArray;
+        
+        teachVc.tempSelectGroupArray = self.tempSelectGroupArray;
+        teachVc.tempSelectGroupModelArray = self.tempSelectGroupModelArray;
         [self.navigationController pushViewController:teachVc animated:YES];
     }else {
         

@@ -1,5 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "2FB7C5C0-8A22-4071-B6B8-128BB19675CE"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "316C6579-9090-4479-BC1F-DAF27877AB1B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NIMDemo/&#x667a;&#x5fae;&#x6821;_Classes/Sections/FriendArea(&#x670b;&#x53cb;&#x5708;)/Model/AreaHelper.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-getNewStateWithStatus:failure:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "316C6579-9090-4479-BC1F-DAF27877AB1B - ebfb024fb6bc3590"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AreaHelper getNewStateWithStatus:failure:]"
+                  moduleName = "&#x667a;&#x5fae;&#x6821;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ZDHX/Desktop/19_work_github/zwx-itc-and-yunxin/%E6%99%BA%E5%BE%AE%E6%A0%A1%20ITC-IM%E5%85%BC%E5%AE%B9%E7%89%88%E6%9C%AC/NIMDemo/NIMDemo/%E6%99%BA%E5%BE%AE%E6%A0%A1_Classes/Sections/FriendArea(%E6%9C%8B%E5%8F%8B%E5%9C%88)/Model/AreaHelper.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "697">
+               </Location>
+               <Location
+                  uuid = "316C6579-9090-4479-BC1F-DAF27877AB1B - f8761bd96ec6271c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__44-[AreaHelper getNewStateWithStatus:failure:]_block_invoke"
+                  moduleName = "&#x667a;&#x5fae;&#x6821;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ZDHX/Desktop/19_work_github/zwx-itc-and-yunxin/%E6%99%BA%E5%BE%AE%E6%A0%A1%20ITC-IM%E5%85%BC%E5%AE%B9%E7%89%88%E6%9C%AC/NIMDemo/NIMDemo/%E6%99%BA%E5%BE%AE%E6%A0%A1_Classes/Sections/FriendArea(%E6%9C%8B%E5%8F%8B%E5%9C%88)/Model/AreaHelper.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -43,7 +43,6 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSString *string = [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding];
         if ([string hasPrefix:@"noToken"]) {
-            
             [[[NIMSDK sharedSDK] loginManager] logout:^(NSError *error)
              {
                  extern NSString *TokenCheckFalse;
@@ -146,9 +145,17 @@
         [storage deleteCookie:cookie];
     }
     
-    NSString *dataSourceName = [[NSUserDefaults standardUserDefaults]valueForKey:@"USER_DEFAULT_DataSourceName"];
+    
     NSMutableDictionary *haveDataSourceNameDic = [NSMutableDictionary dictionaryWithDictionary:params];
-    [haveDataSourceNameDic setValue:dataSourceName.length?dataSourceName:@"" forKey:@"dataSourceName"];
+//    NSString *dataSourceName = [params objectForKey:@"dataSourceName"];
+//    if (params != nil) {
+//        if (dataSourceName == nil || !dataSourceName.length ) {
+//            dataSourceName = [[NSUserDefaults standardUserDefaults]valueForKey:@"USER_DEFAULT_DataSourceName"];
+//            [haveDataSourceNameDic setValue:dataSourceName.length?dataSourceName:@"" forKey:@"dataSourceName"];
+//        }
+//    }
+    
+//    [haveDataSourceNameDic setValue:dataSourceName.length?dataSourceName:@"" forKey:@"dataSourceName"];
     
     // 1.创建请求管理者
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];

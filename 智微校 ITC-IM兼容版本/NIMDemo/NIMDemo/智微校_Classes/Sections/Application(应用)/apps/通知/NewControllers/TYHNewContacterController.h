@@ -34,5 +34,6 @@ typedef void (^ReturnTextArrayBlock)(NSMutableArray *arrayText);
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 
-
+@property (nonatomic, strong) NSMutableArray * tempSelectGroupArray;
+@property (nonatomic, strong) NSMutableArray * tempSelectGroupModelArray;
 @end

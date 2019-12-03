@@ -48,4 +48,7 @@ typedef void (^ReturnUserModelBlock)(NSMutableArray *modelArray);
 
 @property(nonatomic,assign)BOOL isTeacherOrAdmin;
 @property(nonatomic,assign)BOOL whoWillIn;
+
+@property (nonatomic, strong) NSMutableArray * tempSelectGroupArray;
+@property (nonatomic, strong) NSMutableArray * tempSelectGroupModelArray;
 @end

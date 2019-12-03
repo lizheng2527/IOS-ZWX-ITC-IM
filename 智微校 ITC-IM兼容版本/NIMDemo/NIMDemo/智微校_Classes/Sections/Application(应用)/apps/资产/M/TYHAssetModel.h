@@ -26,6 +26,7 @@
 
 @property(nonatomic,copy)NSString *check;
 @property(nonatomic,copy)NSString *grant;
+@property(nonatomic,copy)NSString *jumpUrl;
 @property(nonatomic,copy)NSString *num;
 
 @end

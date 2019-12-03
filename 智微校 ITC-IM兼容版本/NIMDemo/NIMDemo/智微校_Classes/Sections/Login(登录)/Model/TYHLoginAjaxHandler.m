@@ -34,13 +34,25 @@
     
 //    数校的一些应用依据的是language，参数约定改为这样吧：language=zh-CN  language=en-US
 //    NSDictionary *languageDic = @{@"language":@"zh-CN"};
+    NSArray * cookArray = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:requestURL]];
+    
+    for (NSHTTPCookie*cookie in cookArray) {
+        NSString *na = cookie.name;
+        if ([na isEqualToString:@"dataSourceName"]) {
+            [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie]; }
+        if ([na isEqualToString:@"JSESSIONID"]) {
+            [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie]; }
+    }
     
     NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL: [NSURL URLWithString:requestURL]];
     for (NSHTTPCookie *cookie in cookies)
     {
+         NSString *na = cookie.name;
         [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
         
     }
+    
+ 
     
     [TYHHttpTool posts:requestURL params:nil success:^(id json) {
         NSMutableArray * blockArray = [NSMutableArray arrayWithArray:[TYHOranizationModel mj_objectArrayWithKeyValuesArray:json]];
@@ -99,6 +111,12 @@
     NSString *ContactUrl = [NSString stringWithFormat:@"%@%@",url,OrganizationJsonURL];
     ContactUrl = [ContactUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
+    NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL: [NSURL URLWithString:ContactUrl]];
+    for (NSHTTPCookie *cookie in cookies)
+    {
+        [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
+        
+    }
     NSMutableURLRequest *request = [NSMutableURLRequest
                                     requestWithURL:[
                                                     NSURL URLWithString:ContactUrl] cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:10];
@@ -109,6 +127,7 @@
 
     NSData *data = [NSURLConnection sendSynchronousRequest:request
                                          returningResponse:&response error:&error];
+    NSLog(@"%ld", (long)response.statusCode);
     if(!error && data && response.statusCode==200)
         return YES;
     else
@@ -239,8 +258,8 @@
 {
     NSString *userName = [[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_LOGINNAME];
     NSString *passWord = [[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_PASSWORD];
-    
-    NSDictionary *userInfoDic = @{@"sys_auto_authenticate":@"true",@"sys_username":[NSString stringWithFormat:@"%@",userName],@"sys_password":passWord,@"userId":userId};
+    NSString *dataSourceName = [[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_DataSourceName];
+    NSDictionary *userInfoDic = @{@"sys_auto_authenticate":@"true",@"sys_username":[NSString stringWithFormat:@"%@",userName],@"sys_password":passWord,@"userId":userId,@"dataSourceName":dataSourceName};
     NSString *requestURL = [NSString stringWithFormat:@"%@%@",BaseURL,getUserInfo];
     [TYHHttpTool gets:requestURL params:userInfoDic success:^(id json) {
         NSString * data = [[NSString  alloc] initWithData:json encoding:NSUTF8StringEncoding];

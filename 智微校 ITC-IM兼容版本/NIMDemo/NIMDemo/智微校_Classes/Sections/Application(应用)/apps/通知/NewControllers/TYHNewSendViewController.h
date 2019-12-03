@@ -28,5 +28,6 @@
 @property(nonatomic,copy)NSString *token;
 @property(nonatomic,copy)NSString *organizationID;
 
-
+@property (nonatomic, strong) NSMutableArray * tempSelectGroupArray;
+@property (nonatomic, strong) NSMutableArray * tempSelectGroupModelArray;
 @end

@@ -272,7 +272,7 @@ static CGFloat labelW;
             return;
         }
     }
-    [(TYHHomeLabel *)rightLabel setScale:(CGFloat)rightScale];
+//    [(TYHHomeLabel *)rightLabel setScale:(CGFloat)rightScale];
     
 }
 

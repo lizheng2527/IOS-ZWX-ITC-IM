@@ -311,13 +311,13 @@ NIMEventSubscribeManagerDelegate> {
         if ([vc isKindOfClass:[TYHContacterListController class]]) {
             vc.title = @"通讯录";
             if (isTeacherOrAdmin) {
-                if (indexPath.row != 5) vc = [[TYHContacterListController alloc]initWithType:0];
+                if (indexPath.row != 5) vc = [[TYHContacterListController alloc]initWithType:1];
             }
             else {
-               vc = [[TYHContacterListController alloc]initWithType:1];
+               vc = [[TYHContacterListController alloc]initWithType:0];
             }
             if (indexPath.row == 5) {
-                vc = [[TYHContacterListController alloc]initWithType:1];
+                vc = [[TYHContacterListController alloc]initWithType:0];
             }
         }
         [self.navigationController pushViewController:vc animated:YES];

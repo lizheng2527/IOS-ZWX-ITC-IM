@@ -51,7 +51,7 @@
     self = [super init];
     if (self) {
         _isClassOrSchool = type;
-        if (!type) {
+        if (type) {
             self.title = @"组织机构";
         }
         else self.title = @"班级";
@@ -159,8 +159,7 @@
     UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"切换联系人结构" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *actionOrg = [UIAlertAction actionWithTitle:@"组织结构" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-
-        
+ 
         _isClassOrSchool = 1;
         [self requestData];
     }];
@@ -188,7 +187,7 @@
     [SVProgressHUD showWithStatus:@"获取数据中..."];
     ContactModelListHelper *helper = [[ContactModelListHelper alloc]init];
     //1 class  0 school
-    if (!_isClassOrSchool) {
+    if (_isClassOrSchool) {
         [helper getContactCompletionWIthSchool:^(BOOL successful, NSMutableArray *schoolArray) {
             if (successful) {
                 _ListArray = [NSMutableArray arrayWithArray:schoolArray];
@@ -300,7 +299,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+   
     if (tableView == _mySearchDisplayController.searchResultsTableView) {
         UserModel * model = searchResultArray[indexPath.row];
 //        self.navigationController.navigationBar.translucent = YES;
@@ -334,7 +333,6 @@
         }
 //        [self addFriend:usermodel.userId.length?usermodel.userId:@""];
         [self pushToChatVC:usermodel];
-        
         return;
     }
     TYHContactCell *cell = (TYHContactCell *)[tableView cellForRowAtIndexPath:indexPath];
@@ -362,6 +360,7 @@
             [tableView insertRowsAtIndexPaths:arCells withRowAnimation:UITableViewRowAnimationNone];
         }
     }
+     
     if (model.userList) {
         model.isAlreadyInserted = NO;
 //        BOOL isAlreadyInserted = NO;
@@ -370,13 +369,16 @@
             model.isAlreadyInserted=(index>0 && index!=NSIntegerMax);
             if(model.isAlreadyInserted) break;
         }
+        
         if (model.isAlreadyInserted) {
             cell.icon.image = [UIImage imageNamed:@"未展开"];
             [self miniMizeThisRowsWithUserModel:model.userList];
+            
         }else{
             cell.icon.image = [UIImage imageNamed:@"展开"];
             NSUInteger count=indexPath.row+1;
             NSMutableArray *arCells=[NSMutableArray array];
+            
             for(UserModel *dInner in model.userList ) {
                 [arCells addObject:[NSIndexPath indexPathForRow:count inSection:0]];
                 [self.ListArray insertObject:dInner atIndex:count++];
@@ -469,12 +471,13 @@
         if (model.childs && model.childs.count > 0) {
             [self miniMizeThisRows:model.childs];
         }
-        if([self.ListArray indexOfObjectIdenticalTo:model]!=NSNotFound) {
+        if(indexToRemove!=NSNotFound) {
             [self.ListArray removeObjectIdenticalTo:model];
-            [_mainTableview deleteRowsAtIndexPaths:[NSArray arrayWithObject:
-                                                          [NSIndexPath indexPathForRow:indexToRemove inSection:0]
-                                                          ]
-                                        withRowAnimation:UITableViewRowAnimationNone];
+//            [_mainTableview deleteRowsAtIndexPaths:[NSArray arrayWithObject:
+//                                                          [NSIndexPath indexPathForRow:indexToRemove inSection:0]
+//                                                          ]
+//                                        withRowAnimation:UITableViewRowAnimationNone];
+            [_mainTableview reloadData];
         }
     }
 }
@@ -482,14 +485,14 @@
 // 2
 -(void)miniMizeThisRowsWithUserModel:(NSArray*)ar{
     for (UserModel *model in ar) {
-        
-        NSUInteger indexToRemove = [self.ListArray indexOfObjectIdenticalTo:model];
-        if([self.ListArray indexOfObjectIdenticalTo:model]!=NSNotFound) {
-            [self.ListArray removeObjectIdenticalTo:model];
-            [_mainTableview deleteRowsAtIndexPaths:[NSArray arrayWithObject:
-                                                          [NSIndexPath indexPathForRow:indexToRemove inSection:0]
-                                                          ]
-                                        withRowAnimation:UITableViewRowAnimationNone];
+        NSUInteger indexToRemove = [self.ListArray indexOfObject:model];
+        if(indexToRemove!=NSNotFound) {
+            [self.ListArray removeObject:model];
+//            [_mainTableview deleteRowsAtIndexPaths:[NSArray arrayWithObject:
+//                                                          [NSIndexPath indexPathForRow:indexToRemove inSection:0]
+//                                                          ]
+//                                        withRowAnimation:UITableViewRowAnimationNone];
+            [_mainTableview reloadData];
         }
     }
 }

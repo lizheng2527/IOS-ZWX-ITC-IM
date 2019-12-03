@@ -38,15 +38,22 @@ static id _instance;
         model.itemImage = [dic objectForKey:@"imageName"];
         [tmpArray addObject:model];
     }
-    
-    // kind:0 管理员
-    if (kind == 0) {
-        
-    }
-    else
-    {
-        for (int i = 0; i <= 2; i++) {
-            [tmpArray removeLastObject];
+    if (kind == 9) {
+        TYHAssetManagerItemModel *model = [TYHAssetManagerItemModel new];
+        model.itemName = @"资产盘点";
+        model.itemNum = @"0";
+        model.itemImage = @"icon_cm_bd_b";
+        [tmpArray addObject:model];
+    }else{
+        // kind:0 管理员
+        if (kind == 0) {
+            
+        }
+        else
+        {
+            for (int i = 0; i <= 2; i++) {
+                [tmpArray removeLastObject];
+            }
         }
     }
     return tmpArray;

@@ -367,7 +367,7 @@ static CGFloat labelW;
             return;
         }
     }
-    [(QCSHomeLabel *)rightLabel setScale:(CGFloat)rightScale];
+//    [(QCSHomeLabel *)rightLabel setScale:(CGFloat)rightScale];
 }
 
 

@@ -196,13 +196,14 @@
             [_mTableView.mj_header endRefreshing];
         }];
     }
-    
 }
 
 - (void)tableViewScrollToBottom
 {
     if (self.datas.count==0)
-    { return; }
+    {
+        return;
+    }
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_datas.count-1 inSection:0];
     [_mTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
 }
@@ -365,7 +366,6 @@
     } failure:^(NSError *error) {
         [weakSelf.view makeToast:@"留言发送失败" duration:2 position:CSToastPositionCenter];
     }];
-    
 }
 
 

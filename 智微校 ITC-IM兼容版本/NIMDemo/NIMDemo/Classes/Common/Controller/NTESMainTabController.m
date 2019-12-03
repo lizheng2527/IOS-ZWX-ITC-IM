@@ -35,7 +35,7 @@ typedef NS_ENUM(NSInteger,NTESMainTabType) {
     NTESMainTabTypeContact,        //通讯录
     NTESMainTabTypeChatroomList,   //聊天室
     NTESMainTabTypeSetting,        //设置
-    
+    NTESMainTabTypeCricle,
     NTESMainTabTypeTemp,        //临时
 };
 
@@ -293,7 +293,15 @@ typedef NS_ENUM(NSInteger,NTESMainTabType) {
                                  TabbarSelectedImage: @"btn_settings_pressed",
                                  TabbarItemBadgeValue: @(self.customSystemUnreadCount)
                                  }
+//                         @(NTESMainTabTypeSetting)     : @{
+//                         TabbarVC           : @"TYHSettingsViewController",
+//                         TabbarTitle        : NSLocalizedString(@"圈子", nil),
+//                         TabbarImage        : @"btn_circle_pressed",
+//                         TabbarSelectedImage: @"btn_circle_normal",
+//                         TabbarItemBadgeValue: @(self.customSystemUnreadCount)
+//                         }
                          };
+            
         }
         else
         {
@@ -333,6 +341,14 @@ typedef NS_ENUM(NSInteger,NTESMainTabType) {
                          //                             TabbarSelectedImage: @"btn_circle_normal",
                          //                             TabbarItemBadgeValue: @(self.customSystemUnreadCount)
                          //                             }
+//                         @(NTESMainTabTypeSetting)     : @{
+//                                 TabbarVC           : @"TYHSettingsViewController",
+//                                 TabbarTitle        : NSLocalizedString(@"圈子", nil),
+//                                 TabbarImage        : @"btn_circle_pressed",
+//                                 TabbarSelectedImage: @"btn_circle_normal",
+//                                 TabbarItemBadgeValue: @(self.customSystemUnreadCount)
+//                                 }
+                         
                          };
         }
     }

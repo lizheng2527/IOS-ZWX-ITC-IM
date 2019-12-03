@@ -37,8 +37,7 @@
 
 @property (nonatomic, strong) NSMutableArray * resultsModelArray;
 @property (nonatomic, strong) NSMutableArray * tempArr;
-@property (nonatomic, strong) NSMutableArray * tempSelectGroupArray;
-@property (nonatomic, strong) NSMutableArray * tempSelectGroupModelArray;
+
 @property (nonatomic, strong) UISearchBar *mySearchBar;
 @property (nonatomic, strong) UISearchDisplayController *mySearchDisplayController;
 
@@ -239,7 +238,8 @@
     sendVc.modelArray =  self.modelArray;
     
 //    NSLog(@" sendVc.modelArray  == %@",sendVc.modelArray);
-    
+    sendVc.tempSelectGroupModelArray = self.tempSelectGroupModelArray;
+    sendVc.tempSelectGroupArray = self.tempSelectGroupArray;
     [self.navigationController pushViewController:sendVc animated:YES];
     
 }
@@ -519,9 +519,6 @@
         if ([model.name isEqualToString:_resultsArray[indexPath.row]]) {
             
             NSString * voipSrting = model.strId;
-            NSLog(@"_showTableView1111 == %@",_showTableView);
-            
-            NSLog(@"voipSrting11111   == %@",voipSrting);
             if ( [_showTableView containsObject:model.strId]) {
                 selectimage.image = [UIImage imageNamed:@"select_account_list_checked"];
             } else{
@@ -749,10 +746,11 @@
         }
         if([self.groupArray indexOfObjectIdenticalTo:model]!=NSNotFound) {
             [self.groupArray removeObjectIdenticalTo:model];
-            [self.groupTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:
-                                                         [NSIndexPath indexPathForRow:indexToRemove inSection:0]
-                                                         ]
-                                       withRowAnimation:UITableViewRowAnimationNone];
+//            [self.groupTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:
+//                                                         [NSIndexPath indexPathForRow:indexToRemove inSection:0]
+//                                                         ]
+//                                       withRowAnimation:UITableViewRowAnimationNone];
+            [self.groupTableView reloadData];
         }
 
      
@@ -768,10 +766,11 @@
         
         if([self.groupArray indexOfObjectIdenticalTo:model]!=NSNotFound) {
             [self.groupArray removeObjectIdenticalTo:model];
-            [self.groupTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:
-                                                         [NSIndexPath indexPathForRow:indexToRemove inSection:0]
-                                                         ]
-                                       withRowAnimation:UITableViewRowAnimationNone];
+//            [self.groupTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:
+//                                                         [NSIndexPath indexPathForRow:indexToRemove inSection:0]
+//                                                         ]
+//                                       withRowAnimation:UITableViewRowAnimationNone];
+            [self.groupTableView reloadData];
         }
 
     }

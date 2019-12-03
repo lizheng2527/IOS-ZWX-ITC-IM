@@ -26,6 +26,7 @@
 #import "AssetSearchController.h"
 #import "AssetNetWorkHelper.h"
 #import "AssetMyAssetsController.h"
+#import "TYHNewAPPViewController.h"
 
 
 #define kWindow  [UIApplication sharedApplication].keyWindow
@@ -50,6 +51,7 @@ typedef NS_ENUM(NSInteger, AssetManagerInteger) {
     NSString *checkString;
     NSString *grantString;
     NSString *numString;
+    NSString *jumpUrlString;
 }
 
 #pragma mark - viewDiaLoad
@@ -85,6 +87,11 @@ typedef NS_ENUM(NSInteger, AssetManagerInteger) {
     [helper getIndexJson:^(BOOL successful, TYHAssetManagerItemModel *tmpModel) {
         checkString = tmpModel.check;
         grantString = tmpModel.grant;
+        jumpUrlString = tmpModel.jumpUrl;
+        
+        if (![NSString isBlankString:jumpUrlString]) {
+             itemArray = [AssetModelHandler getAssetManagerItemArrayWithUserKind:9];
+        }
         [helper getGrantNumJson:^(BOOL successful, TYHAssetManagerItemModel *tmpModel) {
             numString = tmpModel.num;
             [hud removeFromSuperview];
@@ -233,6 +240,21 @@ typedef NS_ENUM(NSInteger, AssetManagerInteger) {
                 [self.navigationController pushViewController:myAssetView animated:YES];
             }
                 break;
+            case 4:
+            {
+                TYHNewAPPViewController * newAppVc = [[TYHNewAPPViewController alloc] init];
+                newAppVc.userName = _userName;
+                newAppVc.password = _password;
+                if (![NSString isBlankString:jumpUrlString]) {
+                    NSString * url = [NSString stringWithFormat:@"%@?sys_username=%@&sys_password=%@&sys_auto_authenticate=true#/",jumpUrlString,_userName,_password];
+                    newAppVc.urlstr = url;
+                    [newAppVc setHidesBottomBarWhenPushed:YES];
+                    [self.navigationController pushViewController:newAppVc animated:YES];
+                    [self.view makeToast:@"fuck"];
+                }
+               
+            }
+                break;
             default:
                 break;
         }
@@ -277,7 +299,7 @@ typedef NS_ENUM(NSInteger, AssetManagerInteger) {
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        CGSize itemSize = CGSizeMake(self.view.width/4, 70);
+        CGSize itemSize = CGSizeMake(self.view.width/itemArray.count, 70);
         return itemSize;
     }
     else

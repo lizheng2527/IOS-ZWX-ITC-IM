@@ -32,14 +32,15 @@
 #define HEIGHT [UIScreen mainScreen].bounds.size.height
 
 
-@interface WHChooseApplyUserController ()<UISearchBarDelegate,UISearchDisplayDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface WHChooseApplyUserController ()<UISearchBarDelegate,UISearchResultsUpdating,UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) MBProgressHUD *HUD;
 @property (nonatomic, strong) NSArray * resultsData;
 @property (nonatomic, strong) NSMutableArray * resultsArray;
 @property (nonatomic, strong) NSMutableArray * resultsModelArray;
 @property (nonatomic, strong) UISearchBar *mySearchBar;
-@property (nonatomic, strong) UISearchDisplayController *mySearchDisplayController;
+@property (nonatomic, strong) UISearchController *searchController;
+//@property (nonatomic, strong) UISearchDisplayController *mySearchDisplayController;
 @property (nonatomic, strong) NSMutableArray *groupArray;
 @property (nonatomic, strong) UITableView * groupTableView;
 @property (nonatomic, strong) NSString * IDStr;
@@ -138,78 +139,99 @@
 // 初始化 搜索框
 -(void)initMysearchBarAndMysearchDisPlay
 {
-    _mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0,WIDTH * 320 ,40)];
-    _mySearchBar.delegate = self;
-    _mySearchBar.placeholder = @"姓名";
-    [_mySearchBar setAutocapitalizationType:UITextAutocapitalizationTypeNone];
-    self.groupTableView.tableHeaderView = _mySearchBar;
+//    _mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0,WIDTH * 320 ,40)];
+//    _mySearchBar.delegate = self;
+//    _mySearchBar.placeholder = @"姓名";
+//    [_mySearchBar setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+//    self.groupTableView.tableHeaderView = _mySearchBar;
     
-    _mySearchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:_mySearchBar contentsController:self];
-    _mySearchDisplayController.delegate = self;
-    _mySearchDisplayController.searchResultsDataSource = self;
-    _mySearchDisplayController.searchResultsDelegate = self;
-    _mySearchDisplayController.searchResultsTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
-    _mySearchDisplayController.searchResultsTableView.tableHeaderView= [[UIView alloc]initWithFrame:CGRectZero];
+//    _mySearchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:_mySearchBar contentsController:self];
+//    _mySearchDisplayController.delegate = self;
+//    _mySearchDisplayController.searchResultsDataSource = self;
+//    _mySearchDisplayController.searchResultsDelegate = self;
+//    _mySearchDisplayController.searchResultsTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+//    _mySearchDisplayController.searchResultsTableView.tableHeaderView= [[UIView alloc]initWithFrame:CGRectZero];
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+     
+    _searchController.searchResultsUpdater = self;
+     
+    _searchController.dimsBackgroundDuringPresentation = NO;
+     
+    _searchController.hidesNavigationBarDuringPresentation = NO;
+     
+    _searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
+     _searchController.searchBar.placeholder = @"姓名";
+    self.groupTableView.tableHeaderView = self.searchController.searchBar;
 }
 
-- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
-    
-    _resultsArray = [NSMutableArray array];
-    
-    NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
-    NSMutableArray *tempResults = [NSMutableArray array];
-    
-    //去重
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    for (UserModel *model in _resultsModelArray) {
-        [dic setObject:model.name forKey:model.userId];
-    }
-    NSMutableArray *tmpModelArray = [NSMutableArray array];
-    for (NSString *string in dic.allKeys) {
-        UserModel *model = [UserModel new];
-        model.userId = string;
-        [tmpModelArray addObject:model];
-    }
-    [tmpModelArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        UserModel *model = obj;
-        model.name = dic.allValues[idx];
-    }];
-    _resultsModelArray = [NSMutableArray arrayWithArray:tmpModelArray];
-    //去重结束
-    
-    for (UserModel *model in _resultsModelArray) {
-        NSString *storeString = model.name;
-        NSRange storeRange = NSMakeRange(0, storeString.length);
-        NSRange foundRange = [storeString rangeOfString:searchText options:searchOptions range:storeRange];
-        if (foundRange.length) {
-            [tempResults addObject:storeString];
-        }
-    }
-    NSMutableArray *arry = [NSMutableArray array];
-    [arry addObjectsFromArray:tempResults];
-    _resultsArray = [NSMutableArray arrayWithArray:arry];
-    
-    
-    //    _resultsArray =  [NSMutableArray arrayWithArray:[[NSSet setWithArray:arry] allObjects]];
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+     
+    NSString *searchString = [self.searchController.searchBar text];
+     
+     _resultsArray = [NSMutableArray array];
+       
+       NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
+       NSMutableArray *tempResults = [NSMutableArray array];
+       
+       //去重
+       NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+       for (UserModel *model in _resultsModelArray) {
+           [dic setObject:model.name forKey:model.userId];
+       }
+       NSMutableArray *tmpModelArray = [NSMutableArray array];
+       for (NSString *string in dic.allKeys) {
+           UserModel *model = [UserModel new];
+           model.userId = string;
+           [tmpModelArray addObject:model];
+       }
+       [tmpModelArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+           UserModel *model = obj;
+           model.name = dic.allValues[idx];
+       }];
+       _resultsModelArray = [NSMutableArray arrayWithArray:tmpModelArray];
+       //去重结束
+       
+       for (UserModel *model in _resultsModelArray) {
+           NSString *storeString = model.name;
+           NSRange storeRange = NSMakeRange(0, storeString.length);
+           NSRange foundRange = [storeString rangeOfString:searchString options:searchOptions range:storeRange];
+           if (foundRange.length) {
+               [tempResults addObject:storeString];
+           }
+       }
+       NSMutableArray *arry = [NSMutableArray array];
+       [arry addObjectsFromArray:tempResults];
+       _resultsArray = [NSMutableArray arrayWithArray:arry];
+    //刷新表格
+ 
+    [self.groupTableView reloadData];
 }
+
+//- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
+//
+//
+//    
+//
+//    //    _resultsArray =  [NSMutableArray arrayWithArray:[[NSSet setWithArray:arry] allObjects]];
+//}
 
 
 
 #pragma mark - UISearchDisplayController delegate methods
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller  shouldReloadTableForSearchString:(NSString *)searchString {
-    
-    [self filterContentForSearchText:searchString  scope:[[self.searchDisplayController.searchBar scopeButtonTitles]  objectAtIndex:[self.searchDisplayController.searchBar                                                      selectedScopeButtonIndex]]];
-    
-    return YES;
-    
-}
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller  shouldReloadTableForSearchScope:(NSInteger)searchOption {
-    
-    [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
-    
-    return YES;
-}
+//-(BOOL)searchDisplayController:(UISearchDisplayController *)controller  shouldReloadTableForSearchString:(NSString *)searchString {
+//
+//    [self filterContentForSearchText:searchString  scope:[[self.searchDisplayController.searchBar scopeButtonTitles]  objectAtIndex:[self.searchDisplayController.searchBar                                                      selectedScopeButtonIndex]]];
+//
+//    return YES;
+//
+//}
+//
+//- (BOOL)searchDisplayController:(UISearchDisplayController *)controller  shouldReloadTableForSearchScope:(NSInteger)searchOption {
+//
+//    [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+//
+//    return YES;
+//}
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     
     if (_IDStr.length != 0) {
@@ -270,7 +292,7 @@
 #pragma mark - Table view data source
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    if(tableView == _mySearchDisplayController.searchResultsTableView){
+    if(self.searchController.active){
         return _resultsArray.count;
     }else {
         
@@ -282,7 +304,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (tableView == _mySearchDisplayController.searchResultsTableView) {
+    if (self.searchController.active) {
         return  55;
     }
     else if ([[self.groupArray objectAtIndex:indexPath.row] isKindOfClass:[ContactModel class]])
@@ -297,7 +319,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (tableView == _mySearchDisplayController.searchResultsTableView) {
+    if (self.searchController.active) {
         
         static NSString *myCell = @"InviteJoinListViewCellidentifier";
         
@@ -362,7 +384,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (tableView == _mySearchDisplayController.searchResultsTableView) {
+    if (self.searchController.active) {
         
         NSString * name = _resultsArray[indexPath.row];
         NSLog(@"%@",name);
@@ -574,7 +596,9 @@
 }
 
 
-
+- (void)viewDidDisappear:(BOOL)animated{
+    self.searchController.active = FALSE;
+}
 
 /*
 #pragma mark - Navigation

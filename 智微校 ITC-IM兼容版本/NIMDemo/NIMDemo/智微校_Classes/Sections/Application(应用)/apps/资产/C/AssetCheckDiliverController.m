@@ -215,7 +215,6 @@
             break;
         case 1003:
         {
-            
             //已通过
             AssetCheckDiliverModel *model3 = tyhAssetModel.assetPassArray[indexPath.row];
             static NSString *iden3 = @"AssetMineDetailCell3";

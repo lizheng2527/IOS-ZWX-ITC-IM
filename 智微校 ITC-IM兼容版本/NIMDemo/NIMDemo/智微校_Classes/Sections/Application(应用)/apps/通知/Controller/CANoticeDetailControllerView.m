@@ -163,7 +163,13 @@
         TYHNewAPPViewController * newAppVc = [[TYHNewAPPViewController alloc] init];
         NSString *nodeServerUrl = [[NSUserDefaults standardUserDefaults]valueForKey: NODE_SERVER_URL];
         NSString *nodeParam = [[NSUserDefaults standardUserDefaults]valueForKey: NODE_SERVER_PARAM];
-        NSString * url = [NSString stringWithFormat:@"%@%@?%@",nodeServerUrl,_model.mobileUrl,nodeParam];
+        NSString * url ;
+        if (![NSString isBlankString:_model.mobileUrl] && [_model.mobileUrl containsString:@"?"]) {
+            url   = [NSString stringWithFormat:@"%@%@&%@",nodeServerUrl,_model.mobileUrl,nodeParam];
+        }else{
+             url   = [NSString stringWithFormat:@"%@%@?%@",nodeServerUrl,_model.mobileUrl,nodeParam];
+        }
+     
         
         //仅仅为了消息列表的跳转
         newAppVc.sourceId = @"userID";

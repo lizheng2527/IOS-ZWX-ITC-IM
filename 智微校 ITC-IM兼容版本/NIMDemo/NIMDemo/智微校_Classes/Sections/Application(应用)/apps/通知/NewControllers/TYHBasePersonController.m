@@ -23,7 +23,7 @@
 #define HeadBtnHeight 70
 #define WIDTH ([UIScreen mainScreen].bounds.size.width / 320 )
 #define HEIGHT [UIScreen mainScreen].bounds.size.height
-@interface TYHBasePersonController ()<UISearchBarDelegate,UISearchDisplayDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface TYHBasePersonController ()<UISearchBarDelegate,UISearchResultsUpdating,UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) UILabel * lable2;
 
@@ -39,8 +39,8 @@
 @property (nonatomic, strong) NSMutableArray * tempArr;
 
 @property (nonatomic, strong) UISearchBar *mySearchBar;
-@property (nonatomic, strong) UISearchDisplayController *mySearchDisplayController;
-
+//@property (nonatomic, strong) UISearchDisplayController *mySearchDisplayController;
+@property (nonatomic, strong) UISearchController *searchController;
 @end
 
 @implementation TYHBasePersonController
@@ -260,22 +260,34 @@
 // 初始化 搜索框
 -(void)initMysearchBarAndMysearchDisPlay
 {
-    _mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0,WIDTH * 320 ,40)];
-    _mySearchBar.delegate = self;
-    _mySearchBar.placeholder = @"姓名";
-    [_mySearchBar setAutocapitalizationType:UITextAutocapitalizationTypeNone];
-    self.groupTableView.tableHeaderView = _mySearchBar;
-    
-    _mySearchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:_mySearchBar contentsController:self];
-    _mySearchDisplayController.delegate = self;
-    _mySearchDisplayController.searchResultsDataSource = self;
-    _mySearchDisplayController.searchResultsDelegate = self;
-    _mySearchDisplayController.searchResultsTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
-    _mySearchDisplayController.searchResultsTableView.tableHeaderView= [[UIView alloc]initWithFrame:CGRectZero];
+//    _mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0,WIDTH * 320 ,40)];
+//    _mySearchBar.delegate = self;
+//    _mySearchBar.placeholder = @"姓名";
+//    [_mySearchBar setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+//    self.groupTableView.tableHeaderView = _mySearchBar;
+//
+//    _mySearchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:_mySearchBar contentsController:self];
+//    _mySearchDisplayController.delegate = self;
+//    _mySearchDisplayController.searchResultsDataSource = self;
+//    _mySearchDisplayController.searchResultsDelegate = self;
+//    _mySearchDisplayController.searchResultsTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+//    _mySearchDisplayController.searchResultsTableView.tableHeaderView= [[UIView alloc]initWithFrame:CGRectZero];
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+     
+    _searchController.searchResultsUpdater = self;
+     
+    _searchController.dimsBackgroundDuringPresentation = NO;
+     
+    _searchController.hidesNavigationBarDuringPresentation = NO;
+     
+    _searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
+     
+    self.groupTableView.tableHeaderView = self.searchController.searchBar;
 }
-
-- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
-    
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+     
+    NSString *searchString = [self.searchController.searchBar text];
+     
     [_resultsArray removeAllObjects];
     
     NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
@@ -284,7 +296,7 @@
     for (int i = 0; i < _resultsData.count; i++) {
         NSString *storeString = _resultsData[i];
         NSRange storeRange = NSMakeRange(0, storeString.length);
-        NSRange foundRange = [storeString rangeOfString:searchText options:searchOptions range:storeRange];
+        NSRange foundRange = [storeString rangeOfString:searchString options:searchOptions range:storeRange];
         if (foundRange.length) {
             [tempResults addObject:storeString];
         }
@@ -294,24 +306,48 @@
     
     _resultsArray =  [NSMutableArray arrayWithArray:[[NSSet setWithArray:arry] allObjects]];
     
+    //刷新表格
+ 
+    [self.groupTableView reloadData];
 }
+//- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
+//
+//    [_resultsArray removeAllObjects];
+//
+//    NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
+//
+//    NSMutableArray *tempResults = [NSMutableArray array];
+//    for (int i = 0; i < _resultsData.count; i++) {
+//        NSString *storeString = _resultsData[i];
+//        NSRange storeRange = NSMakeRange(0, storeString.length);
+//        NSRange foundRange = [storeString rangeOfString:searchText options:searchOptions range:storeRange];
+//        if (foundRange.length) {
+//            [tempResults addObject:storeString];
+//        }
+//    }
+//    NSMutableArray *arry = [NSMutableArray array];
+//    [arry addObjectsFromArray:tempResults];
+//
+//    _resultsArray =  [NSMutableArray arrayWithArray:[[NSSet setWithArray:arry] allObjects]];
+//
+//}
 
-#pragma mark - UISearchDisplayController delegate methods
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller  shouldReloadTableForSearchString:(NSString *)searchString {
-    
-    [self filterContentForSearchText:searchString  scope:[[self.searchDisplayController.searchBar scopeButtonTitles]  objectAtIndex:[self.searchDisplayController.searchBar                                                      selectedScopeButtonIndex]]];
-    
-    return YES;
-    
-}
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller  shouldReloadTableForSearchScope:(NSInteger)searchOption {
-    
-    [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
-    
-    return YES;
-    
-}
+//#pragma mark - UISearchDisplayController delegate methods
+//-(BOOL)searchDisplayController:(UISearchDisplayController *)controller  shouldReloadTableForSearchString:(NSString *)searchString {
+//
+//    [self filterContentForSearchText:searchString  scope:[[self.searchDisplayController.searchBar scopeButtonTitles]  objectAtIndex:[self.searchDisplayController.searchBar                                                      selectedScopeButtonIndex]]];
+//
+//    return YES;
+//
+//}
+//
+//- (BOOL)searchDisplayController:(UISearchDisplayController *)controller  shouldReloadTableForSearchScope:(NSInteger)searchOption {
+//
+//    [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+//
+//    return YES;
+//
+//}
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
     self.navigationController.tabBarController.tabBar.hidden = YES;
@@ -342,7 +378,7 @@
 #pragma mark - Table view data source
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    if(tableView == _mySearchDisplayController.searchResultsTableView){
+    if(self.searchController.active){
         return _resultsArray.count;
     }else {
         
@@ -354,7 +390,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (tableView == _mySearchDisplayController.searchResultsTableView) {
+    if (self.searchController.active) {
         return  50;
     }
     else if ([[self.groupArray objectAtIndex:indexPath.row] isKindOfClass:[ContactModel class]])
@@ -369,7 +405,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (tableView == _mySearchDisplayController.searchResultsTableView) {
+    if (self.searchController.active) {
         
         //        if ([[self.groupArray objectAtIndex:indexPath.row] isKindOfClass:[UserModel class]]){
         
@@ -500,9 +536,9 @@
 
 - (void)cellSelectBtnClickeGroups:(UITapGestureRecognizer *)tap {
     
-    CGPoint point = [tap locationInView:_mySearchDisplayController.searchResultsTableView];
+    CGPoint point = [tap locationInView:_groupTableView];
     
-    NSIndexPath * indexPath = [_mySearchDisplayController.searchResultsTableView indexPathForRowAtPoint:point];
+    NSIndexPath * indexPath = [_groupTableView indexPathForRowAtPoint:point];
     
     NSLog(@"indexPath.row = %ld",indexPath.row);
     
@@ -554,11 +590,11 @@
                 }
                 self.modelArray = self.tempArray;
             }
-            
-            
             NSLog(@"_selectedArray 111 == %@",_selectedArray);
-            [_mySearchDisplayController.searchResultsTableView reloadData];
+            [_groupTableView reloadData];
+            break;
         }
+        
     }
     
     [self.groupTableView reloadData];
@@ -643,7 +679,7 @@
     
     
     NSString *voipAccount = [[NSUserDefaults standardUserDefaults]valueForKey:USER_DEFAULT_ID];
-    if (tableView == _mySearchDisplayController.searchResultsTableView)
+    if (self.searchController.active)
     {
         //        NSArray *array = [[NSSet setWithArray:_modelArray]allObjects];
         //        for (UserModel *model in array) {
@@ -907,19 +943,20 @@
 }
 #pragma mark - 返回行缩进 有三个方法一起配合使用才生效
 -(NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (tableView == _groupTableView) {
-        
-        if ([[self.groupArray objectAtIndex:indexPath.row] isKindOfClass:[ContactModel class]]) {
-            ContactModel *model = [self.groupArray objectAtIndex:indexPath.row];
-            return model.IndentationLevel*1;
-        }
-        else
-        {
-            ContactModel *model = [self.groupArray objectAtIndex:indexPath.row];
-            return model.IndentationLevel*1 - 1;
-            
-        }
-    }
+    if (!self.searchController.active) {
+
+               if ([[self.groupArray objectAtIndex:indexPath.row] isKindOfClass:[ContactModel class]]) {
+                   ContactModel *model = [self.groupArray objectAtIndex:indexPath.row];
+                   return model.IndentationLevel*1;
+               }
+               else
+               {
+                   ContactModel *model = [self.groupArray objectAtIndex:indexPath.row];
+                   return model.IndentationLevel*1 - 1;
+                   
+               }
+           }
+    
     return 0;
     
 }
@@ -946,5 +983,7 @@
     }
     return NO;
 }
-
+- (void)viewDidDisappear:(BOOL)animated{
+    self.searchController.active = FALSE;
+}
 @end
